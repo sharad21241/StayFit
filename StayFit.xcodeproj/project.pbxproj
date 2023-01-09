@@ -13,6 +13,11 @@
 		D0049D95296C1918009FFDD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0049D93296C1918009FFDD9 /* Main.storyboard */; };
 		D0049D97296C1919009FFDD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0049D96296C1919009FFDD9 /* Assets.xcassets */; };
 		D0049D9A296C191A009FFDD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0049D98296C191A009FFDD9 /* LaunchScreen.storyboard */; };
+		D0049DA8296C199F009FFDD9 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0049DA7296C199F009FFDD9 /* SplashScreen.storyboard */; };
+		D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DA9296C19BC009FFDD9 /* SplashViewController.swift */; };
+		D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DAD296C1C76009FFDD9 /* CustomTextField.swift */; };
+		D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0049DB3296C1CE5009FFDD9 /* Register.storyboard */; };
+		D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		D0049D96296C1919009FFDD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0049D99296C191A009FFDD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0049D9B296C191A009FFDD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0049DA7296C199F009FFDD9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
+		D0049DA9296C19BC009FFDD9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		D0049DAD296C1C76009FFDD9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D0049DB3296C1CE5009FFDD9 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
+		D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,10 @@
 		D0049D8C296C1918009FFDD9 /* StayFit */ = {
 			isa = PBXGroup;
 			children = (
-				D0049D8D296C1918009FFDD9 /* AppDelegate.swift */,
-				D0049D8F296C1918009FFDD9 /* SceneDelegate.swift */,
+				D0049DAB296C1C5E009FFDD9 /* Common */,
+				D0049DA1296C1923009FFDD9 /* AppDelegate */,
+				D0049DA2296C1938009FFDD9 /* PreLogin */,
+				D0049DA3296C193F009FFDD9 /* PostLogin */,
 				D0049D91296C1918009FFDD9 /* ViewController.swift */,
 				D0049D93296C1918009FFDD9 /* Main.storyboard */,
 				D0049D96296C1919009FFDD9 /* Assets.xcassets */,
@@ -65,6 +77,105 @@
 				D0049D9B296C191A009FFDD9 /* Info.plist */,
 			);
 			path = StayFit;
+			sourceTree = "<group>";
+		};
+		D0049DA1296C1923009FFDD9 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D0049D8D296C1918009FFDD9 /* AppDelegate.swift */,
+				D0049D8F296C1918009FFDD9 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D0049DA2296C1938009FFDD9 /* PreLogin */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DB0296C1CCE009FFDD9 /* Login */,
+				D0049DAF296C1CC6009FFDD9 /* Registration */,
+				D0049DA4296C194D009FFDD9 /* LaunchScreen */,
+			);
+			path = PreLogin;
+			sourceTree = "<group>";
+		};
+		D0049DA3296C193F009FFDD9 /* PostLogin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PostLogin;
+			sourceTree = "<group>";
+		};
+		D0049DA4296C194D009FFDD9 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DA6296C1968009FFDD9 /* Controller */,
+				D0049DA5296C1960009FFDD9 /* Storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		D0049DA5296C1960009FFDD9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DA7296C199F009FFDD9 /* SplashScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D0049DA6296C1968009FFDD9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DA9296C19BC009FFDD9 /* SplashViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0049DAB296C1C5E009FFDD9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DAC296C1C64009FFDD9 /* CustomTextfield */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D0049DAC296C1C64009FFDD9 /* CustomTextfield */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DAD296C1C76009FFDD9 /* CustomTextField.swift */,
+			);
+			path = CustomTextfield;
+			sourceTree = "<group>";
+		};
+		D0049DAF296C1CC6009FFDD9 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DB2296C1CD9009FFDD9 /* Controller */,
+				D0049DB1296C1CD3009FFDD9 /* Storyboard */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		D0049DB0296C1CCE009FFDD9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D0049DB1296C1CD3009FFDD9 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DB3296C1CE5009FFDD9 /* Register.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D0049DB2296C1CD9009FFDD9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +236,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0049DA8296C199F009FFDD9 /* SplashScreen.storyboard in Resources */,
 				D0049D9A296C191A009FFDD9 /* LaunchScreen.storyboard in Resources */,
 				D0049D97296C1919009FFDD9 /* Assets.xcassets in Resources */,
 				D0049D95296C1918009FFDD9 /* Main.storyboard in Resources */,
+				D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +253,10 @@
 			files = (
 				D0049D92296C1918009FFDD9 /* ViewController.swift in Sources */,
 				D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */,
+				D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */,
 				D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */,
+				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
+				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +406,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StayFit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -317,7 +433,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StayFit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
