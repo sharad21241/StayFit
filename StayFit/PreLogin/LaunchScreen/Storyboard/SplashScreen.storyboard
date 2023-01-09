@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8sL-X7-gbZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -8,23 +8,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Splash View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="Y6W-OH-hqX" customClass="SplashViewController" customModule="StayFit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Welcome" translatesAutoresizingMaskIntoConstraints="NO" id="1IG-Sf-nbD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fitnessX" translatesAutoresizingMaskIntoConstraints="NO" id="rVX-Oc-zEn">
+                                <rect key="frame" x="87" y="430" width="240" height="90"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-Di-sgw">
+                                <rect key="frame" x="30" y="520" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="6Bc-Di-sgw" secondAttribute="trailing" constant="30" id="0mA-ty-HCK"/>
+                            <constraint firstItem="rVX-Oc-zEn" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.1" id="2jK-vd-PS1"/>
+                            <constraint firstItem="rVX-Oc-zEn" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="3kC-fd-zUW"/>
+                            <constraint firstAttribute="bottom" secondItem="1IG-Sf-nbD" secondAttribute="bottom" id="4gp-iv-S6H"/>
+                            <constraint firstItem="1IG-Sf-nbD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7xA-Of-LIl"/>
+                            <constraint firstItem="rVX-Oc-zEn" firstAttribute="width" secondItem="5EZ-qb-Rvc" secondAttribute="width" multiplier="0.57971" id="DVO-kN-mna"/>
+                            <constraint firstItem="1IG-Sf-nbD" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="IDa-ff-mhG"/>
+                            <constraint firstItem="6Bc-Di-sgw" firstAttribute="top" secondItem="rVX-Oc-zEn" secondAttribute="bottom" id="KY6-NQ-OnW"/>
+                            <constraint firstItem="6Bc-Di-sgw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="NCp-8F-bY1"/>
+                            <constraint firstItem="rVX-Oc-zEn" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="jgX-DS-tvz"/>
+                            <constraint firstItem="1IG-Sf-nbD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="nnO-pS-AEg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="7vn-th-qSt"/>
+                    <connections>
+                        <outlet property="lblCaption" destination="6Bc-Di-sgw" id="zGN-xe-eBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="61"/>
+            <point key="canvasLocation" x="939.13043478260875" y="60.9375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="WEy-Hf-nLh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8sL-X7-gbZ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TFa-n7-n8b">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="dwH-Bm-bds"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bxd-cT-arJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="60.9375"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Welcome" width="1500" height="3248"/>
+        <image name="fitnessX" width="162" height="37"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

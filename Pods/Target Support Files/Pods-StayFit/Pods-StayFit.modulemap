@@ -1,0 +1,6 @@
+framework module Pods_StayFit {
+  umbrella header "Pods-StayFit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FontRegular</key>
+	<string>Helvetica</string>
+	<key>FontBold</key>
+	<string>Helvetica-Bold</string>
+	<key>FontSizeXXXXXXS</key>
+	<integer>7</integer>
+	<key>FontSizeXXXXXS</key>
+	<integer>10</integer>
+	<key>FontSizeXXXXS</key>
+	<integer>14</integer>
+	<key>FontSizeXXXXXXXS</key>
+	<integer>9</integer>
+	<key>FontSizeXXXS</key>
+	<integer>15</integer>
+	<key>FontSizeXXS</key>
+	<integer>16</integer>
+	<key>FontSizeXS</key>
+	<integer>17</integer>
+	<key>FontSizeXL</key>
+	<integer>21</integer>
+	<key>FontSizeS</key>
+	<integer>18</integer>
+	<key>FontSizeM</key>
+	<integer>19</integer>
+	<key>FontSizeL</key>
+	<integer>20</integer>
+	<key>FontSizeXXL</key>
+	<integer>22</integer>
+	<key>FontSizeXXXL</key>
+	<integer>23</integer>
+	<key>FontSizeCellIcon</key>
+	<integer>24</integer>
+	<key>FontSizeXXXXL</key>
+	<integer>32</integer>
+	<key>FontSizeXXXXXL</key>
+	<integer>34</integer>
+	<key>FontSizeXXXXXXL</key>
+	<integer>39</integer>
+	<key>FontSizeXXXXXXXL</key>
+	<integer>54</integer>
+	<key>FontSizeDashboard</key>
+	<integer>12</integer>
+	<key>FontSizeAccountCellList</key>
+	<integer>15</integer>
+	<key>FontSizeUpcomingTransfer</key>
+	<integer>15</integer>
+	<key>FontSizeStackLabel</key>
+	<integer>10</integer>
+</dict>
+</plist>

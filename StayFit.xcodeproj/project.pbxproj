@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7848B8A91BE5223FD5AE8987 /* Pods_StayFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */; };
 		D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D8D296C1918009FFDD9 /* AppDelegate.swift */; };
 		D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D8F296C1918009FFDD9 /* SceneDelegate.swift */; };
 		D0049D92296C1918009FFDD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D91296C1918009FFDD9 /* ViewController.swift */; };
@@ -18,9 +19,23 @@
 		D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DAD296C1C76009FFDD9 /* CustomTextField.swift */; };
 		D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0049DB3296C1CE5009FFDD9 /* Register.storyboard */; };
 		D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */; };
+		D0049DB8296C1E44009FFDD9 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DB7296C1E44009FFDD9 /* OnboardingViewController.swift */; };
+		D0049DBF296C22C1009FFDD9 /* iPhone11.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0049DBA296C22C1009FFDD9 /* iPhone11.plist */; };
+		D0049DC0296C22C1009FFDD9 /* iPhone6.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0049DBB296C22C1009FFDD9 /* iPhone6.plist */; };
+		D0049DC1296C22C1009FFDD9 /* iPhone.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0049DBC296C22C1009FFDD9 /* iPhone.plist */; };
+		D0049DC2296C22C1009FFDD9 /* Normal.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0049DBD296C22C1009FFDD9 /* Normal.plist */; };
+		D0049DC3296C22C1009FFDD9 /* iPhone6Plus.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0049DBE296C22C1009FFDD9 /* iPhone6Plus.plist */; };
+		D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DC5296C2314009FFDD9 /* ThemeConstants.swift */; };
+		D0049DC9296C24A1009FFDD9 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DC8296C24A1009FFDD9 /* Utils.swift */; };
+		D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DCB296C25AA009FFDD9 /* Constants.swift */; };
+		D0049DD3296C2656009FFDD9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DD2296C2656009FFDD9 /* Enum.swift */; };
+		D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DD4296C27AE009FFDD9 /* Extensions.swift */; };
+		D0049DD8296C296B009FFDD9 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DD7296C296A009FFDD9 /* Storyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C532F16D8D7AB7318E1EAEB /* Pods-StayFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayFit.release.xcconfig"; path = "Target Support Files/Pods-StayFit/Pods-StayFit.release.xcconfig"; sourceTree = "<group>"; };
 		D0049D8A296C1918009FFDD9 /* StayFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0049D8D296C1918009FFDD9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0049D8F296C1918009FFDD9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +49,19 @@
 		D0049DAD296C1C76009FFDD9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		D0049DB3296C1CE5009FFDD9 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBaseViewController.swift; sourceTree = "<group>"; };
+		D0049DB7296C1E44009FFDD9 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		D0049DBA296C22C1009FFDD9 /* iPhone11.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone11.plist; sourceTree = "<group>"; };
+		D0049DBB296C22C1009FFDD9 /* iPhone6.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone6.plist; sourceTree = "<group>"; };
+		D0049DBC296C22C1009FFDD9 /* iPhone.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone.plist; sourceTree = "<group>"; };
+		D0049DBD296C22C1009FFDD9 /* Normal.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Normal.plist; sourceTree = "<group>"; };
+		D0049DBE296C22C1009FFDD9 /* iPhone6Plus.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iPhone6Plus.plist; sourceTree = "<group>"; };
+		D0049DC5296C2314009FFDD9 /* ThemeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeConstants.swift; sourceTree = "<group>"; };
+		D0049DC8296C24A1009FFDD9 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		D0049DCB296C25AA009FFDD9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0049DD2296C2656009FFDD9 /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		D0049DD4296C27AE009FFDD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D0049DD7296C296A009FFDD9 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		FA1A19B2028BB11225624E57 /* Pods-StayFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayFit.debug.xcconfig"; path = "Target Support Files/Pods-StayFit/Pods-StayFit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,17 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7848B8A91BE5223FD5AE8987 /* Pods_StayFit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8ECD5A4001077424421D9511 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FA1A19B2028BB11225624E57 /* Pods-StayFit.debug.xcconfig */,
+				7C532F16D8D7AB7318E1EAEB /* Pods-StayFit.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D0049D81296C1917009FFDD9 = {
 			isa = PBXGroup;
 			children = (
 				D0049D8C296C1918009FFDD9 /* StayFit */,
 				D0049D8B296C1918009FFDD9 /* Products */,
+				8ECD5A4001077424421D9511 /* Pods */,
+				F119059B1A807C3404A6EE27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +107,7 @@
 		D0049D8C296C1918009FFDD9 /* StayFit */ = {
 			isa = PBXGroup;
 			children = (
+				D0049DB9296C2295009FFDD9 /* FontPlists */,
 				D0049DAB296C1C5E009FFDD9 /* Common */,
 				D0049DA1296C1923009FFDD9 /* AppDelegate */,
 				D0049DA2296C1938009FFDD9 /* PreLogin */,
@@ -133,6 +175,12 @@
 		D0049DAB296C1C5E009FFDD9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D0049DD6296C294C009FFDD9 /* Identifiers */,
+				D0049DD0296C2640009FFDD9 /* Enum */,
+				D0049DCE296C260E009FFDD9 /* Extension */,
+				D0049DCA296C259D009FFDD9 /* Constants */,
+				D0049DC7296C240F009FFDD9 /* Utils */,
+				D0049DC4296C2300009FFDD9 /* ThemeConstants */,
 				D0049DAC296C1C64009FFDD9 /* CustomTextfield */,
 			);
 			path = Common;
@@ -174,8 +222,77 @@
 			isa = PBXGroup;
 			children = (
 				D0049DB5296C1CFE009FFDD9 /* RegisterBaseViewController.swift */,
+				D0049DB7296C1E44009FFDD9 /* OnboardingViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0049DB9296C2295009FFDD9 /* FontPlists */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DBC296C22C1009FFDD9 /* iPhone.plist */,
+				D0049DBB296C22C1009FFDD9 /* iPhone6.plist */,
+				D0049DBE296C22C1009FFDD9 /* iPhone6Plus.plist */,
+				D0049DBA296C22C1009FFDD9 /* iPhone11.plist */,
+				D0049DBD296C22C1009FFDD9 /* Normal.plist */,
+			);
+			path = FontPlists;
+			sourceTree = "<group>";
+		};
+		D0049DC4296C2300009FFDD9 /* ThemeConstants */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DC5296C2314009FFDD9 /* ThemeConstants.swift */,
+			);
+			path = ThemeConstants;
+			sourceTree = "<group>";
+		};
+		D0049DC7296C240F009FFDD9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DC8296C24A1009FFDD9 /* Utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D0049DCA296C259D009FFDD9 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DCB296C25AA009FFDD9 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D0049DCE296C260E009FFDD9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DD4296C27AE009FFDD9 /* Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		D0049DD0296C2640009FFDD9 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DD2296C2656009FFDD9 /* Enum.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		D0049DD6296C294C009FFDD9 /* Identifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D0049DD7296C296A009FFDD9 /* Storyboard.swift */,
+			);
+			path = Identifiers;
+			sourceTree = "<group>";
+		};
+		F119059B1A807C3404A6EE27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,9 +302,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0049D9E296C191A009FFDD9 /* Build configuration list for PBXNativeTarget "StayFit" */;
 			buildPhases = (
+				2C6D3CE100AA51EE207C98F3 /* [CP] Check Pods Manifest.lock */,
 				D0049D86296C1918009FFDD9 /* Sources */,
 				D0049D87296C1918009FFDD9 /* Frameworks */,
 				D0049D88296C1918009FFDD9 /* Resources */,
+				5458533AC992771C79736FC5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -236,15 +355,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0049DC0296C22C1009FFDD9 /* iPhone6.plist in Resources */,
+				D0049DC1296C22C1009FFDD9 /* iPhone.plist in Resources */,
+				D0049DC3296C22C1009FFDD9 /* iPhone6Plus.plist in Resources */,
 				D0049DA8296C199F009FFDD9 /* SplashScreen.storyboard in Resources */,
 				D0049D9A296C191A009FFDD9 /* LaunchScreen.storyboard in Resources */,
 				D0049D97296C1919009FFDD9 /* Assets.xcassets in Resources */,
+				D0049DC2296C22C1009FFDD9 /* Normal.plist in Resources */,
+				D0049DBF296C22C1009FFDD9 /* iPhone11.plist in Resources */,
 				D0049D95296C1918009FFDD9 /* Main.storyboard in Resources */,
 				D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C6D3CE100AA51EE207C98F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StayFit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5458533AC992771C79736FC5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StayFit/Pods-StayFit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StayFit/Pods-StayFit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StayFit/Pods-StayFit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0049D86296C1918009FFDD9 /* Sources */ = {
@@ -253,10 +419,17 @@
 			files = (
 				D0049D92296C1918009FFDD9 /* ViewController.swift in Sources */,
 				D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */,
+				D0049DC9296C24A1009FFDD9 /* Utils.swift in Sources */,
 				D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */,
+				D0049DD8296C296B009FFDD9 /* Storyboard.swift in Sources */,
+				D0049DD3296C2656009FFDD9 /* Enum.swift in Sources */,
 				D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */,
+				D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */,
+				D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */,
+				D0049DB8296C1E44009FFDD9 /* OnboardingViewController.swift in Sources */,
 				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
 				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
+				D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +571,7 @@
 		};
 		D0049D9F296C191A009FFDD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA1A19B2028BB11225624E57 /* Pods-StayFit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -405,6 +579,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StayFit/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Splashscreen;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -425,6 +600,7 @@
 		};
 		D0049DA0296C191A009FFDD9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C532F16D8D7AB7318E1EAEB /* Pods-StayFit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -432,6 +608,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StayFit/Info.plist;
+				INFOPLIST_KEY_NSMainNibFile = Splashscreen;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = SplashScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

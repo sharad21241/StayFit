@@ -9,21 +9,19 @@ import UIKit
 
 class SplashViewController: UIViewController {
 
+    @IBOutlet weak var lblCaption: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.updateUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI()
+    {
+        lblCaption.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXS)
+        lblCaption.text = "Everybody Can Train"
+        let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.OnboardingViewController) as! OnboardingViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
-    */
-
 }
