@@ -25,5 +25,9 @@ public class VCIdentifier: NSObject {
     //MARK: - Controllers
     
     let OnboardingViewController = "OnboardingViewController"
+    let FirstTourViewController = "FirstTourViewController"
+    let SecondTourViewController = "SecondTourViewController"
+    let ThirdTourViewController = "ThirdTourViewController"
+    let FourthTourViewController = "FourthTourViewController"
     
 }

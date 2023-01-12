@@ -116,3 +116,18 @@ public extension UIButton {
         contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
+
+extension UIView {
+    /// function to create gradients
+    public func createGradientLayerOnView()
+    {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        gradientLayer.colors = [
+            Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlue).cgColor, Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightBlue).cgColor]
+        gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
+        gradientLayer.locations = [0.0, 0.90]
+        gradientLayer.endPoint = CGPoint(x: 1.0, y: 0.0)
+        self.layer.insertSublayer(gradientLayer, at: 0)
+    }
+}

@@ -29,50 +29,50 @@ public class Utils: NSObject {
         return ""
     }
     
-    //MARK: - SVG Files
-    /// Function to get SVG image file
-    ///
-    /// - Parameter name: image name as String
-    /// - Returns: UIImage
-    public func getImage(name: String, oldColorCode: [String] = [], newColorCode: [String] = []) -> UIImage?
-    {
-        if let path = Bundle.main.path(forResource: name, ofType: "svg")
-        {
-            do{
-                // we can perform colour change operations here if we want to .
-                var svgData = try String(contentsOfFile: path)
-                //Check for the code are matching or not. if matched then dont do anything. otherwise repalce the color code
-                if oldColorCode.count != 0
-                {
-                    if oldColorCode.count == newColorCode.count
-                    {
-                        for (index,_) in oldColorCode.enumerated()
-                        {
-                            svgData = svgData.replacingOccurrences(of: oldColorCode[index], with: newColorCode[index], options: .init(rawValue: 0), range: nil)
-                        }
-                        
-                        let d = svgData.data(using: .utf8)
-                        let receivedIcon: SVGKImage = SVGKImage(data: d)
-                        let img = receivedIcon.uiImage
-                        return img
-                    }
-                }
-                
-                let d = svgData.data(using: .utf8)
-                let receivedIcon: SVGKImage = SVGKImage(data: d)
-                let img = receivedIcon.uiImage
-                return img
-            }
-            catch let error{
-                printLog("Error \(error.localizedDescription)")
-                return nil
-            }
-        }
-        else
-        {
-            return nil
-        }
-    }
+//    //MARK: - SVG Files
+//    /// Function to get SVG image file
+//    ///
+//    /// - Parameter name: image name as String
+//    /// - Returns: UIImage
+//    public func getImage(name: String, oldColorCode: [String] = [], newColorCode: [String] = []) -> UIImage?
+//    {
+//        if let path = Bundle.main.path(forResource: name, ofType: "svg")
+//        {
+//            do{
+//                // we can perform colour change operations here if we want to .
+//                var svgData = try String(contentsOfFile: path)
+//                //Check for the code are matching or not. if matched then dont do anything. otherwise repalce the color code
+//                if oldColorCode.count != 0
+//                {
+//                    if oldColorCode.count == newColorCode.count
+//                    {
+//                        for (index,_) in oldColorCode.enumerated()
+//                        {
+//                            svgData = svgData.replacingOccurrences(of: oldColorCode[index], with: newColorCode[index], options: .init(rawValue: 0), range: nil)
+//                        }
+//                        
+//                        let d = svgData.data(using: .utf8)
+//                        let receivedIcon: SVGKImage = SVGKImage(data: d)
+//                        let img = receivedIcon.uiImage
+//                        return img
+//                    }
+//                }
+//
+//                let d = svgData.data(using: .utf8)
+//                let receivedIcon: SVGKImage = SVGKImage(data: d)
+//                let img = receivedIcon.uiImage
+//                return img
+//            }
+//            catch let error{
+//                printLog("Error \(error.localizedDescription)")
+//                return nil
+//            }
+//        }
+//        else
+//        {
+//            return nil
+//        }
+//    }
     //MARK:- Print
     /// Function to check the current status mode for app is in debug or release mode and based on that print the dialogs
     ///
@@ -98,11 +98,11 @@ public class Utils: NSObject {
         ////If your plist contain root as Dictionary
         if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
             
-            let plistFontName = dic[fontName]! as! String
+            let plistFontName = dic[fontName] as? String
             
             let fontSize =  dic[size]! as! CGFloat
             
-            if let fnt = UIFont(name: plistFontName, size: fontSize)
+            if let fnt = UIFont(name: plistFontName!, size: fontSize)
             {
                 return fnt
             }
@@ -150,7 +150,7 @@ public class Utils: NSObject {
     ///
     /// - Parameter name: name
     /// - Returns: return color
-    /*
+
     func getColorFromHexValue(name: String) -> UIColor
     {
         if name.count > 0
@@ -163,7 +163,7 @@ public class Utils: NSObject {
             return convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         }
     }
-     */
+     
     
     /// Function to get the plist of specific device
     ///

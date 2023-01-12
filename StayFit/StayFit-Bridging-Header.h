@@ -8,6 +8,4 @@
 #ifndef StayFit_Bridging_Header_h
 #define StayFit_Bridging_Header_h
 
-#import "SVGKit.h"
-#import "SVGKImage.h"
 #endif /* StayFit_Bridging_Header_h */
