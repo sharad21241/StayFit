@@ -43,6 +43,51 @@ public class Utils: NSObject {
         return ""
     }
     
+    //MARK:- Theme functions
+    /// Function to get the specific font
+    ///
+    /// - Parameters:
+    ///   - size: size
+    ///   - fontName: fontname by default it is San Francisco regular
+    /// - Returns: font to apply
+    func getSpecificFonts(size:String, fontName:String = ThemeConstants.shared.FontFontello) -> UIFont {
+        
+        let path = getPathAccToDevice()
+        
+        ////If your plist contain root as Dictionary
+        if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
+            
+            let fontName = dic[fontName]! as! String
+            
+            var fontSize =  dic[size]! as! CGFloat
+            
+            var incrementFactorForFontello:CGFloat = 0
+            if let fontello = dic[ThemeConstants.shared.FontFontello] as? String
+            {
+                if fontello == fontName
+                {
+                    switch Constants.shared.screenType{
+                    case .iPhones_5_5s_5c_SE:
+                        incrementFactorForFontello = 0
+                        
+                    case .iPhones_6_6s_7_8:
+                        incrementFactorForFontello = 2
+                        
+                    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+                        incrementFactorForFontello = 4
+                        
+                    default: break
+                    }
+                    
+                    fontSize = fontSize + incrementFactorForFontello
+                }
+            }
+            
+            return  UIFont(name: fontName, size: fontSize)!
+        }
+        return UIFont()
+    }
+    
 //    //MARK: - SVG Files
 //    /// Function to get SVG image file
 //    ///
@@ -177,6 +222,22 @@ public class Utils: NSObject {
             return convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         }
     }
+    
+    /// function call to add fontello icon to textfield
+    /// - Parameters:
+    ///   - textfield: textfield description
+    ///   - icon: icon description
+    func addIconToTextField(textfield: CustomTextField, icon: String)
+    {
+        let label = UILabel();
+        label.font = getSpecificFonts(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontFontello)
+        label.text = icon
+        label.frame = CGRect(x: 10, y: 15, width: 20, height: 20)
+        textfield.addSubview(label)
+        let leftView = UIView.init(frame: CGRect(x:10, y:0, width:30, height:30))
+        textfield.leftView = leftView;
+        textfield.leftViewMode = UITextField.ViewMode.always
+    }
      
     
     /// Function to get the plist of specific device
@@ -187,6 +248,15 @@ public class Utils: NSObject {
         var path = readPlist(plistName: "iPhone")
         
         switch Constants.shared.screenType{
+            
+//        case .iPhone5:
+//            path = readPlist(plistName: "iPhone")
+//
+//        case .iPhone6:
+//            path = readPlist(plistName: "iPhone6")
+//
+//        case .iPhone6Plus:
+//            path = readPlist(plistName: "iPhone6Plus")
         case .iPhones_5_5s_5c_SE:
             path = readPlist(plistName: "iPhone")
             
@@ -207,7 +277,7 @@ public class Utils: NSObject {
             
         case .iPhone_XSMax_ProMax:
             path = readPlist(plistName: "iPhone11")
-            
+       
         default: break
         }
         

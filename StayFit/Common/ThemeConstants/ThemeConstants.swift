@@ -15,6 +15,10 @@ public class ThemeConstants: NSObject {
     //MARK: - PLIST constant for fontSize
     public let FontRegular = "FontRegular"
     public let FontBold = "FontBold"
+    public let FontFontello = "FontFontello"
+    public let Poppins = "Poppins"
+    public let PoppinsSemiBold = "PoppinsSemiBold"
+    public let PoppinsBold = "PoppinsBold"
     public let FontSizeXXXXXXS = "FontSizeXXXXXXS"
     public let FontSizeXXXXXS = "FontSizeXXXXXS"
     public let FontSizeXXXXS = "FontSizeXXXXS"

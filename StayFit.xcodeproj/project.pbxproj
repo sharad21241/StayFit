@@ -32,6 +32,10 @@
 		D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DD4296C27AE009FFDD9 /* Extensions.swift */; };
 		D0049DD8296C296B009FFDD9 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049DD7296C296A009FFDD9 /* Storyboard.swift */; };
 		D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */; };
+		D0DDF30929711F10003D3E30 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0DDF30829711F10003D3E30 /* fontello.ttf */; };
+		D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDF30A297128A5003D3E30 /* MBFontello.swift */; };
+		D0DDF30E2971537F003D3E30 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDF30D2971537F003D3E30 /* BaseViewController.swift */; };
+		D0DDF31629715EA2003D3E30 /* Poppins.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0DDF31429715EA2003D3E30 /* Poppins.ttf */; };
 		D0F32FF2296FD91E00D9390B /* SecondTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F32FF1296FD91E00D9390B /* SecondTourViewController.swift */; };
 		D0F32FF4296FD92E00D9390B /* ThirdTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F32FF3296FD92E00D9390B /* ThirdTourViewController.swift */; };
 		D0F32FF6296FD93D00D9390B /* FourthTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F32FF5296FD93D00D9390B /* FourthTourViewController.swift */; };
@@ -67,6 +71,10 @@
 		D0049DD4296C27AE009FFDD9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D0049DD7296C296A009FFDD9 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		D0DDF30829711F10003D3E30 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
+		D0DDF30A297128A5003D3E30 /* MBFontello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFontello.swift; sourceTree = "<group>"; };
+		D0DDF30D2971537F003D3E30 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D0DDF31429715EA2003D3E30 /* Poppins.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Poppins.ttf; sourceTree = "<group>"; };
 		D0F32FF1296FD91E00D9390B /* SecondTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTourViewController.swift; sourceTree = "<group>"; };
 		D0F32FF3296FD92E00D9390B /* ThirdTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdTourViewController.swift; sourceTree = "<group>"; };
 		D0F32FF5296FD93D00D9390B /* FourthTourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthTourViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +163,7 @@
 		D0049DA3296C193F009FFDD9 /* PostLogin */ = {
 			isa = PBXGroup;
 			children = (
+				D0DDF30C2971535E003D3E30 /* BaseClasses */,
 			);
 			path = PostLogin;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 		D0049DAB296C1C5E009FFDD9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D0DDF30729711EF3003D3E30 /* Fontello */,
 				D0A8938F296EEA7F00B09DD4 /* NavigationController */,
 				D0049DD6296C294C009FFDD9 /* Identifiers */,
 				D0049DD0296C2640009FFDD9 /* Enum */,
@@ -312,6 +322,24 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		D0DDF30729711EF3003D3E30 /* Fontello */ = {
+			isa = PBXGroup;
+			children = (
+				D0DDF31429715EA2003D3E30 /* Poppins.ttf */,
+				D0DDF30829711F10003D3E30 /* fontello.ttf */,
+				D0DDF30A297128A5003D3E30 /* MBFontello.swift */,
+			);
+			path = Fontello;
+			sourceTree = "<group>";
+		};
+		D0DDF30C2971535E003D3E30 /* BaseClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D0DDF30D2971537F003D3E30 /* BaseViewController.swift */,
+			);
+			path = BaseClasses;
+			sourceTree = "<group>";
+		};
 		D0FB83DB296EC1080079482A /* SVGFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,8 +418,10 @@
 				D0049DC0296C22C1009FFDD9 /* iPhone6.plist in Resources */,
 				D0049DC1296C22C1009FFDD9 /* iPhone.plist in Resources */,
 				D0049DC3296C22C1009FFDD9 /* iPhone6Plus.plist in Resources */,
+				D0DDF30929711F10003D3E30 /* fontello.ttf in Resources */,
 				D0049DA8296C199F009FFDD9 /* SplashScreen.storyboard in Resources */,
 				D0049D9A296C191A009FFDD9 /* LaunchScreen.storyboard in Resources */,
+				D0DDF31629715EA2003D3E30 /* Poppins.ttf in Resources */,
 				D0049D97296C1919009FFDD9 /* Assets.xcassets in Resources */,
 				D0049DC2296C22C1009FFDD9 /* Normal.plist in Resources */,
 				D0049DBF296C22C1009FFDD9 /* iPhone11.plist in Resources */,
@@ -454,6 +484,7 @@
 				D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */,
 				D0049DC9296C24A1009FFDD9 /* Utils.swift in Sources */,
 				D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */,
+				D0DDF30E2971537F003D3E30 /* BaseViewController.swift in Sources */,
 				D0049DD8296C296B009FFDD9 /* Storyboard.swift in Sources */,
 				D0049DD3296C2656009FFDD9 /* Enum.swift in Sources */,
 				D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */,
@@ -465,6 +496,7 @@
 				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
 				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
 				D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */,
+				D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */,
 				D0F32FF2296FD91E00D9390B /* SecondTourViewController.swift in Sources */,
 				D0FB8466296ED9920079482A /* FirstTourViewController.swift in Sources */,
 			);
