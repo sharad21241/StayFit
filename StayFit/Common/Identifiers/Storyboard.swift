@@ -13,6 +13,7 @@ public class Storyboard : NSObject {
     
     //MARK: - Storyboards
     let Register = "Register"
+    let Login = "Login"
     
     
     
@@ -30,5 +31,6 @@ public class VCIdentifier: NSObject {
     let SecondTourViewController = "SecondTourViewController"
     let ThirdTourViewController = "ThirdTourViewController"
     let FourthTourViewController = "FourthTourViewController"
+    let LoginViewController = "LoginViewController"
     
 }

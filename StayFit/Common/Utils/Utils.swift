@@ -25,6 +25,18 @@ public class Utils: NSObject {
             cntrl.layer.masksToBounds = true
         }
     }
+    
+    /// Function to create shadow to view
+    ///
+    /// - Parameter viw: view
+    public func createShadowToView(viw : UIView, height: Float = 5)
+    {
+        viw.layer.masksToBounds = false
+        viw.layer.shadowColor = UIColor.lightGray.cgColor
+        viw.layer.shadowOpacity = 0.5
+        viw.layer.shadowOffset = CGSize(width: 4, height: Int(height))
+        viw.layer.shadowRadius = 5.0
+    }
     /// function to get hex code to be replaced in svg
     ///
     /// - Parameter name: colour name (key)
@@ -232,7 +244,7 @@ public class Utils: NSObject {
         let label = UILabel();
         label.font = getSpecificFonts(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontFontello)
         label.text = icon
-        label.frame = CGRect(x: 10, y: 15, width: 20, height: 20)
+        label.frame = CGRect(x: 10, y: 18, width: 25, height: 25)
         textfield.addSubview(label)
         let leftView = UIView.init(frame: CGRect(x:10, y:0, width:30, height:30))
         textfield.leftView = leftView;

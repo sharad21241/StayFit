@@ -5,9 +5,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>fontello.ttf</string>
-		<string>Poppins-Bold.ttf</string>
 		<string>Poppins.ttf</string>
 		<string>Poppins-SemiBold.ttf</string>
+		<string>Poppins-Bold.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>

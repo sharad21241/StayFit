@@ -17,10 +17,11 @@ class BaseViewController: UIViewController {
         textField.placeholder = placeholder
         textField.font = Utils.shared.getSpecificFont(size: fontSize, fontName: fontName)
         textField.floatPlaceholderFont = Utils.shared.getSpecificFont(size: fontSize, fontName: fontName)
-        textField.dtLayer.backgroundColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray).cgColor
+        textField.dtLayer.backgroundColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightTextFieldBG).cgColor
         textField.dtborderStyle = .rounded
         Utils.shared.addIconToTextField(textfield: textField, icon: icon)
         textField.dtLayer.borderWidth = 0
+        Utils.shared.cornerRadiusTo(control: textField, radius: 15)
     }
     
     func setupButtonWithGradient(firstColor: UIColor, SecondColor: UIColor, btn: MBButton, btnType: ButtonTypeFormat, fontName: String, fontSize: String, title: String)
@@ -31,7 +32,7 @@ class BaseViewController: UIViewController {
         btn.setTitle(title, for: .normal)
         btn.titleLabel?.font = Utils.shared.getSpecificFont(size: fontSize)
         btn.layer.addSublayer(gradient)
-        btn.layer.borderWidth = 1
+        btn.layer.borderWidth = 0
         btn.tintColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         btn.titleLabel?.textColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         btn.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack).cgColor

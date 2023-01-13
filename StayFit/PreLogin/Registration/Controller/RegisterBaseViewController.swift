@@ -45,9 +45,8 @@ class RegisterBaseViewController: BaseViewController {
         
         //Setup UILabel
         setupUILabel(label: lblLogin, lblText: "Already have an Account? Login", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
-        setupUILabel(label: lblHeyThere, lblText: "Hey There,", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
-        setupUILabel(label: lblCreateAccount, lblText: "Create an Account", size: ThemeConstants.shared.FontSizeXXXL, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
-        //setupUILabel(label: lblTerms, lblText: "By continuing you accept our Privacy Policy and Term of Use", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
+        setupUILabel(label: lblHeyThere, lblText: "Hey There,", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
+        setupUILabel(label: lblCreateAccount, lblText: "Create an Account", size: ThemeConstants.shared.FontSizeXXXL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
         
         //Setup Button
         //gradient color
@@ -56,7 +55,9 @@ class RegisterBaseViewController: BaseViewController {
 
         //Setup buttons
         self.setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnRegister, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.FontBold, fontSize: ThemeConstants.shared.FontSizeXXXXL, title: "Register")
+        btnRegister.addTarget(self, action: #selector(onTapRegister), for: .touchUpInside)
         
+        //Social Icons
         btnFB.setImage(UIImage(named: "facebook"), for: .normal)
         btnFB.layer.borderWidth = 1
         btnFB.layer.cornerRadius = 20
@@ -100,5 +101,12 @@ class RegisterBaseViewController: BaseViewController {
                 lblTerms.attributedText = strTermsCheck
             }
         }
+    }
+    
+    @objc func onTapRegister()
+    {
+        let sb = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

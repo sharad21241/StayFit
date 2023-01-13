@@ -10,6 +10,10 @@
 	<string>fontello</string>
 	<key>Poppins</key>
 	<string>Poppins</string>
+    <key>PoppinsSemiBold</key>
+    <string>Poppins-SemiBold</string>
+    <key>PoppinsBold</key>
+    <string>Poppins-Bold</string>
 	<key>FontSizeXXXXXXS</key>
 	<integer>7</integer>
 	<key>FontSizeXXXXXS</key>
