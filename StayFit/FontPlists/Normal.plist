@@ -66,5 +66,9 @@
 	<string>E2EAFF</string>
 	<key>FontColorPayMoneyBlue</key>
 	<string>D9F0FF</string>
+    <key>FontColorBlueLinear</key>
+    <string>92A3FD</string>
+    <key>FontColorBlueLinearSecond</key>
+    <string>9DCEFF</string>
 </dict>
 </plist>

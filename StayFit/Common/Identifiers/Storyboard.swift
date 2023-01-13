@@ -24,6 +24,7 @@ public class VCIdentifier: NSObject {
     
     //MARK: - Controllers
     
+    let RegisterBaseViewController = "RegisterBaseViewController"
     let OnboardingViewController = "OnboardingViewController"
     let FirstTourViewController = "FirstTourViewController"
     let SecondTourViewController = "SecondTourViewController"

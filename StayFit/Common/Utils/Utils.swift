@@ -11,6 +11,20 @@ import UIKit
 public class Utils: NSObject {
     public static let shared = Utils()
     
+    
+    /// function call to set cornerRadius to any view
+    /// - Parameters:
+    ///   - view: view description
+    ///   - radius: radius description
+    public func cornerRadiusTo(control: AnyObject, radius: Float = 10)
+    {
+        if let cntrl = control as? UIView
+        {
+            cntrl.layer.cornerRadius = CGFloat(radius)
+            cntrl.clipsToBounds = true
+            cntrl.layer.masksToBounds = true
+        }
+    }
     /// function to get hex code to be replaced in svg
     ///
     /// - Parameter name: colour name (key)
@@ -410,12 +424,13 @@ public class MBButton: UIButton {
             self.setTitleColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlue), for: .normal)
             break
         case .ClearColorWhiteTextWithBorder:
+            self.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXXXL, fontName: ThemeConstants.shared.FontBold)
             self.tintColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
             self.backgroundColor = UIColor.clear
             self.clipsToBounds = true
             self.layer.cornerRadius = 10.0
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlue).cgColor
+            self.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack).cgColor
             break
         }
         
@@ -460,3 +475,47 @@ public class MBButton: UIButton {
     }
 }
 
+// MARK: - Gradient
+extension CAGradientLayer {
+    enum Point {
+        case topLeft
+        case centerLeft
+        case bottomLeft
+        case topCenter
+        case center
+        case bottomCenter
+        case topRight
+        case centerRight
+        case bottomRight
+        var point: CGPoint {
+            switch self {
+            case .topLeft:
+                return CGPoint(x: 0, y: 0)
+            case .centerLeft:
+                return CGPoint(x: 0, y: 0.5)
+            case .bottomLeft:
+                return CGPoint(x: 0, y: 1.0)
+            case .topCenter:
+                return CGPoint(x: 0.5, y: 0)
+            case .center:
+                return CGPoint(x: 0.5, y: 0.5)
+            case .bottomCenter:
+                return CGPoint(x: 0.5, y: 1.0)
+            case .topRight:
+                return CGPoint(x: 1.0, y: 0.0)
+            case .centerRight:
+                return CGPoint(x: 1.0, y: 0.5)
+            case .bottomRight:
+                return CGPoint(x: 1.0, y: 1.0)
+            }
+        }
+    }
+    convenience init(start: Point, end: Point, colors: [CGColor], type: CAGradientLayerType) {
+        self.init()
+        self.startPoint = start.point
+        self.endPoint = end.point
+        self.colors = colors
+        self.locations = (0..<colors.count).map(NSNumber.init)
+        self.type = type
+    }
+}

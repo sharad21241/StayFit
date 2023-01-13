@@ -73,4 +73,6 @@ public class ThemeConstants: NSObject {
     public let FontColorLineLbl = "FontColorLineLbl"
     public let FontColorPrimaryBackBlue = "FontColorPrimaryBackBlue"
     public let FontColorPayMoneyBlue = "FontColorPayMoneyBlue"
+    public let FontColorBlueLinear = "FontColorBlueLinear"
+    public let FontColorBlueLinearSecond = "FontColorBlueLinearSecond"
 }
