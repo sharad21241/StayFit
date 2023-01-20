@@ -30,5 +30,15 @@ class MBFontello: NSObject {
     let icon_user = "\u{f2c0}"
     let ic_checkbox_untick = "\u{e80d}"
     let ic_checkbox_ticked = "\u{e80e}"
+    let ic_eye = "\u{e80f}"
+    let ic_eye_off = "\u{e80c}"
+    let ic_share = "\u{e89a}"
+    let ic_height = "\u{e811}"
+    let ic_bene_sync = "\u{e869}"
+    let ic_weight = "\u{e810}"
+    let ic_chart = "\u{e812}"
+    let ic_time = "\u{e813}"
+    let ic_time_repeat = "\u{e814}"
+    let ic_cancel = "\u{e815}"
 
 }

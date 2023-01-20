@@ -162,23 +162,41 @@ public class Utils: NSObject {
     ///   - size: size
     ///   - fontName: fontname by default it is San Francisco regular
     /// - Returns: font to apply
-    public func getSpecificFont(size:String, fontName:String = ThemeConstants.shared.FontRegular) -> UIFont {
+    public func getSpecificFont(size:String, fontName:String = ThemeConstants.shared.Poppins) -> UIFont {
         
         let path = getPathAccToDevice()
         
         ////If your plist contain root as Dictionary
         if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
             
-            let plistFontName = dic[fontName] as? String
+            let fontName = dic[fontName]! as! String
             
-            let fontSize =  dic[size]! as! CGFloat
+            var fontSize =  dic[size]! as! CGFloat
             
-            if let fnt = UIFont(name: plistFontName!, size: fontSize)
+            var incrementFactorForFontello:CGFloat = 0
+            if let fontello = dic[ThemeConstants.shared.FontFontello] as? String
             {
-                return fnt
+                if fontello == fontName
+                {
+                    switch Constants.shared.screenType{
+                    case .iPhones_5_5s_5c_SE:
+                        incrementFactorForFontello = 0
+                        
+                    case .iPhones_6_6s_7_8:
+                        incrementFactorForFontello = 2
+                        
+                    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+                        incrementFactorForFontello = 4
+                        
+                    default: break
+                    }
+                    
+                    fontSize = fontSize + incrementFactorForFontello
+                }
             }
+            
+            return  UIFont(name: fontName, size: fontSize)!
         }
-        
         return UIFont()
     }
     
@@ -243,6 +261,7 @@ public class Utils: NSObject {
     {
         let label = UILabel();
         label.font = getSpecificFonts(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontFontello)
+        label.textColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
         label.text = icon
         label.frame = CGRect(x: 10, y: 18, width: 25, height: 25)
         textfield.addSubview(label)
@@ -260,15 +279,6 @@ public class Utils: NSObject {
         var path = readPlist(plistName: "iPhone")
         
         switch Constants.shared.screenType{
-            
-//        case .iPhone5:
-//            path = readPlist(plistName: "iPhone")
-//
-//        case .iPhone6:
-//            path = readPlist(plistName: "iPhone6")
-//
-//        case .iPhone6Plus:
-//            path = readPlist(plistName: "iPhone6Plus")
         case .iPhones_5_5s_5c_SE:
             path = readPlist(plistName: "iPhone")
             
@@ -289,7 +299,7 @@ public class Utils: NSObject {
             
         case .iPhone_XSMax_ProMax:
             path = readPlist(plistName: "iPhone11")
-       
+            
         default: break
         }
         

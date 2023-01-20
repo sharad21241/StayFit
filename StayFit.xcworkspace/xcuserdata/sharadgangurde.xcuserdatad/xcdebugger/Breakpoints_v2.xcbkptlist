@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DAF41E80-F0E7-44B0-8586-0315FB23E959"
+            uuid = "81178861-421A-4B65-8D12-EDA05B17190B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StayFit/PreLogin/Registration/Controller/RegisterBaseViewController.swift"
+            filePath = "StayFit/PostLogin/BaseClasses/BaseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "setupUI()"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "setupButtonWithGradient(firstColor:SecondColor:btn:btnType:fontName:fontSize:title:isAttributed:icon:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

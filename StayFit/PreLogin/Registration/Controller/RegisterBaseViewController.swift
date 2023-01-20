@@ -54,7 +54,7 @@ class RegisterBaseViewController: BaseViewController {
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
 
         //Setup buttons
-        self.setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnRegister, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.FontBold, fontSize: ThemeConstants.shared.FontSizeXXXXL, title: "Register")
+        self.setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnRegister, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.FontBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Register")
         btnRegister.addTarget(self, action: #selector(onTapRegister), for: .touchUpInside)
         
         //Social Icons
@@ -69,18 +69,18 @@ class RegisterBaseViewController: BaseViewController {
         btnGoogle.sizeToFit()
         btnGoogle.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray).cgColor
         
-        let fontelloFont = Utils.shared.getSpecificFonts(size: ThemeConstants.shared.FontSizeXXL, fontName: ThemeConstants.shared.FontFontello)
-        let font = Utils.shared.getSpecificFonts(size: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins)
+        let fontelloFont = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXL, fontName: ThemeConstants.shared.FontFontello)
+        let font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins)
         let colorBlack = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack)
         
         //Unchecked
         strTermsUncheck = NSMutableAttributedString()
-        strTermsUncheck.append(attributedString(MBFontello.shared.ic_checkbox_untick, font: fontelloFont, color: colorBlack))
-        strTermsUncheck.append(attributedString(" By continuing you accept our Privacy Policy and Term of Use", font: font, color: colorBlack))
+        strTermsUncheck.append(attributedString(MBFontello.shared.ic_checkbox_untick, font: fontelloFont))
+        strTermsUncheck.append(attributedString(" By continuing you accept our Privacy Policy and Term of Use", font: font))
         //Checked
         strTermsCheck = NSMutableAttributedString()
-        strTermsCheck.append(attributedString(MBFontello.shared.ic_checkbox_ticked, font: fontelloFont, color: colorBlack))
-        strTermsCheck.append(attributedString(" By continuing you accept our Privacy Policy and Term of Use", font: font, color: colorBlack))
+        strTermsCheck.append(attributedString(MBFontello.shared.ic_checkbox_ticked, font: fontelloFont))
+        strTermsCheck.append(attributedString(" By continuing you accept our Privacy Policy and Term of Use", font: font))
 
         lblTerms.attributedText = strTermsUncheck
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(btnCheckboxTapped(_:)))
@@ -105,8 +105,8 @@ class RegisterBaseViewController: BaseViewController {
     
     @objc func onTapRegister()
     {
-        let sb = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+        let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.PersonalDetailsVC) as! PersonalDetailsVC
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
