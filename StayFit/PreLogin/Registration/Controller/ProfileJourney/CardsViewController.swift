@@ -7,6 +7,7 @@
 
 import UIKit
 
+///This class is used to store the carousel cards data
 class CarouselData: NSObject {
     var img: String?
     var title: String?
@@ -25,6 +26,7 @@ class CardsViewController: BaseViewController {
     var pageControl: MBLCAnimatedPageControl!
     var iSelectedCard = -1
     
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         self.updateUI()
         self.setupCarouselData()
@@ -37,7 +39,8 @@ class CardsViewController: BaseViewController {
             viewCarousel.scrollToItem(at: 0, animated: false)
         }
     }
-    
+    //MARK: - User defined methods
+    /// function call to update UI
     func updateUI()
     {
         //Setup UILabels
@@ -47,9 +50,11 @@ class CardsViewController: BaseViewController {
         let firstColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond)
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
         
+        //Setup buttons
         setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnConfirm, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXL, title: "Confirm")
     }
     
+    /// function call to setup the cards to show
     func setupCarouselData()
     {
         var objEntity = CarouselData()
@@ -82,7 +87,7 @@ class CardsViewController: BaseViewController {
         viewCarousel.scrollToItem(at: iSelectedCard, animated: true)
     }
 }
-
+//MARK: - iCarouselDelegate, iCarouselDataSource
 extension CardsViewController: iCarouselDelegate, iCarouselDataSource{
     func numberOfItems(in carousel: iCarousel) -> Int {
         return arrDetails.count
@@ -114,7 +119,7 @@ extension CardsViewController: iCarouselDelegate, iCarouselDataSource{
     func carousel(_ _carousel: iCarousel, itemTransformForOffset offset: CGFloat, baseTransform atransform: CATransform3D) -> CATransform3D {
         let distance: Float = 100.0
         //number of pixels to move the items away from camera
-        let z: CGFloat = CGFloat(-fminf(1.0, Float(CGFloat(fabs(offset)))) * distance)
+        let z: CGFloat = CGFloat(-fminf(1.0, Float(CGFloat(abs(offset)))) * distance)
         return CATransform3DTranslate(atransform, offset * 1.15 * _carousel.itemWidth, 0.0, z)
     }
 }

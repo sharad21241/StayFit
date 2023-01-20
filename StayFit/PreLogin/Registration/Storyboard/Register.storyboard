@@ -645,9 +645,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-z0-CAb" customClass="MBButton" customModule="StayFit" customModuleProvider="target">
-                                <rect key="frame" x="30" y="782" width="354" height="55"/>
+                                <rect key="frame" x="30" y="777" width="354" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="yqT-tw-oPJ"/>
+                                    <constraint firstAttribute="height" constant="60" id="yqT-tw-oPJ"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             </button>

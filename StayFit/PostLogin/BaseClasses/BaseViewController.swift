@@ -7,12 +7,20 @@
 
 import UIKit
 
+///this is a base class
 class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-   
+    
+    /// function call to customize textfield
+    /// - Parameters:
+    ///   - textField: textField description
+    ///   - placeholder: placeholder description
+    ///   - fontSize: fontSize description
+    ///   - fontName: fontName description
+    ///   - icon: icon description
     func setupTextField(textField: CustomTextField, placeholder: String, fontSize: String, fontName: String, icon: String = MBFontello.shared.icon_user) {
         textField.placeholder = placeholder
         textField.font = Utils.shared.getSpecificFont(size: fontSize, fontName: fontName)
@@ -24,6 +32,17 @@ class BaseViewController: UIViewController {
         Utils.shared.cornerRadiusTo(control: textField, radius: 15)
     }
     
+    /// function call to customize uibutton
+    /// - Parameters:
+    ///   - firstColor: firstColor description
+    ///   - SecondColor: SecondColor description
+    ///   - btn: btn description
+    ///   - btnType: btnType description
+    ///   - fontName: fontName description
+    ///   - fontSize: fontSize description
+    ///   - title: title description
+    ///   - isAttributed: isAttributed description
+    ///   - icon: icon description
     func setupButtonWithGradient(firstColor: UIColor, SecondColor: UIColor, btn: MBButton, btnType: ButtonTypeFormat, fontName: String, fontSize: String, title: String, isAttributed: Bool = false, icon: String = "")
     {
         let gradient = CAGradientLayer(start: .centerLeft, end: .centerRight, colors: [firstColor.cgColor, SecondColor.cgColor], type: .axial)
@@ -54,29 +73,18 @@ class BaseViewController: UIViewController {
         }
     }
     
+    /// function call to customize UI label
+    /// - Parameters:
+    ///   - label: label description
+    ///   - lblText: lblText description
+    ///   - size: size description
+    ///   - name: name description
+    ///   - color: color description
     func setupUILabel(label: UILabel, lblText: String, size: String, name: String, color: String) {
         label.font = Utils.shared.getSpecificFont(size: size, fontName: name)
         label.text = lblText
         label.textColor = Utils.shared.convertHexColor(name: color)
     }
-    
-    /// Function to get attributed string
-    ///
-    /// - Parameters:
-    ///   - string: String for adding attributes
-    ///   - font: Font for the string
-    /// - Returns: Attributed string with custom font
-//    func attributedString(_ string: String, font: UIFont, color: UIColor) -> NSAttributedString {
-//        
-//        //Set attributed text to label description
-//        let strAttributedText = NSMutableAttributedString(string: string)
-//        
-//        //Add attributes
-//        strAttributedText.addAttribute(NSAttributedString.Key.font, value: font, range: NSRange(location: 0, length: string.count))
-//        strAttributedText.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: NSRange(location: 0, length: string.count))
-//        
-//        return strAttributedText
-//    }
     
     /// Function to get attributed string
     ///

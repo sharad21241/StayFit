@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+///this class is use for carousel
 class CarouselView: UIView {
     
     @IBOutlet weak var imgView: UIImageView!
@@ -16,11 +16,9 @@ class CarouselView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //Default handler for down arrow
         updateUI()
     }
-    
+    //Update labels
     func updateUI()
     {
         let fontRegular = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.Poppins)
