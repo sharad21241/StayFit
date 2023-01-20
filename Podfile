@@ -7,5 +7,5 @@ target 'StayFit' do
 
   # Pods for StayFit
 	pod 'Alamofire'
-
+  pod 'iCarousel'
 end

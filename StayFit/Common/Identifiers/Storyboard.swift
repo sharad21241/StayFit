@@ -37,5 +37,6 @@ public class VCIdentifier: NSObject {
     
     //MARK: -  TableView Cells
     let textFieldCell = "TextFieldCell"
+    let CarouselView = "CarouselView"
     
 }

@@ -34,6 +34,10 @@
 		D00B95E12977CD4000244DC0 /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B95E02977CD4000244DC0 /* PersonalDetailsVC.swift */; };
 		D00B95E72977D1DE00244DC0 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B95E52977D1DE00244DC0 /* TextFieldCell.swift */; };
 		D00B95E82977D1DE00244DC0 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00B95E62977D1DE00244DC0 /* TextFieldCell.xib */; };
+		D038A89C297A702600EDAED3 /* MBIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D038A89B297A702600EDAED3 /* MBIndicatorView.m */; };
+		D038A89E297A707600EDAED3 /* MBLCAnimatedPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D038A89D297A707600EDAED3 /* MBLCAnimatedPageControl.m */; };
+		D038A8A6297A97B400EDAED3 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D038A8A5297A97B400EDAED3 /* CarouselView.xib */; };
+		D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038A8A8297A97DE00EDAED3 /* CarouselView.swift */; };
 		D04E39822977E80C00528B7F /* CommonTextfieldEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */; };
 		D04E398929781EC200528B7F /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E398829781EC200528B7F /* CardsViewController.swift */; };
 		D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */; };
@@ -82,6 +86,12 @@
 		D00B95E02977CD4000244DC0 /* PersonalDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDetailsVC.swift; sourceTree = "<group>"; };
 		D00B95E52977D1DE00244DC0 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		D00B95E62977D1DE00244DC0 /* TextFieldCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldCell.xib; sourceTree = "<group>"; };
+		D038A89A297A6FC500EDAED3 /* MBIndicatorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBIndicatorView.h; sourceTree = "<group>"; };
+		D038A89B297A702600EDAED3 /* MBIndicatorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBIndicatorView.m; sourceTree = "<group>"; };
+		D038A89D297A707600EDAED3 /* MBLCAnimatedPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MBLCAnimatedPageControl.m; sourceTree = "<group>"; };
+		D038A8A0297A709F00EDAED3 /* MBLCAnimatedPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MBLCAnimatedPageControl.h; sourceTree = "<group>"; };
+		D038A8A5297A97B400EDAED3 /* CarouselView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarouselView.xib; sourceTree = "<group>"; };
+		D038A8A8297A97DE00EDAED3 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextfieldEntity.swift; sourceTree = "<group>"; };
 		D04E398829781EC200528B7F /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -214,6 +224,7 @@
 		D0049DAB296C1C5E009FFDD9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D038A897297A6EEE00EDAED3 /* PageControl */,
 				D04E398329781DBA00528B7F /* CarouselView */,
 				D00B95E22977D05500244DC0 /* TableViewCell */,
 				D0DDF30729711EF3003D3E30 /* Fontello */,
@@ -352,6 +363,8 @@
 			children = (
 				D00B95E52977D1DE00244DC0 /* TextFieldCell.swift */,
 				D00B95E62977D1DE00244DC0 /* TextFieldCell.xib */,
+				D038A8A5297A97B400EDAED3 /* CarouselView.xib */,
+				D038A8A8297A97DE00EDAED3 /* CarouselView.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -362,6 +375,17 @@
 				D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D038A897297A6EEE00EDAED3 /* PageControl */ = {
+			isa = PBXGroup;
+			children = (
+				D038A89A297A6FC500EDAED3 /* MBIndicatorView.h */,
+				D038A89B297A702600EDAED3 /* MBIndicatorView.m */,
+				D038A89D297A707600EDAED3 /* MBLCAnimatedPageControl.m */,
+				D038A8A0297A709F00EDAED3 /* MBLCAnimatedPageControl.h */,
+			);
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		D04E398329781DBA00528B7F /* CarouselView */ = {
@@ -506,6 +530,7 @@
 				D0049DBF296C22C1009FFDD9 /* iPhone11.plist in Resources */,
 				D0049D95296C1918009FFDD9 /* Main.storyboard in Resources */,
 				D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */,
+				D038A8A6297A97B400EDAED3 /* CarouselView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,15 +590,18 @@
 				D0049DC9296C24A1009FFDD9 /* Utils.swift in Sources */,
 				D04E39822977E80C00528B7F /* CommonTextfieldEntity.swift in Sources */,
 				D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */,
+				D038A89C297A702600EDAED3 /* MBIndicatorView.m in Sources */,
 				D0DDF30E2971537F003D3E30 /* BaseViewController.swift in Sources */,
 				D0049DD8296C296B009FFDD9 /* Storyboard.swift in Sources */,
 				D04E398929781EC200528B7F /* CardsViewController.swift in Sources */,
 				D0049DD3296C2656009FFDD9 /* Enum.swift in Sources */,
+				D038A89E297A707600EDAED3 /* MBLCAnimatedPageControl.m in Sources */,
 				D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */,
 				D00B95E72977D1DE00244DC0 /* TextFieldCell.swift in Sources */,
 				D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */,
 				D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */,
 				D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */,
+				D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */,
 				D00B95E12977CD4000244DC0 /* PersonalDetailsVC.swift in Sources */,
 				D0049DB8296C1E44009FFDD9 /* OnboardingViewController.swift in Sources */,
 				D0F32FF4296FD92E00D9390B /* ThirdTourViewController.swift in Sources */,

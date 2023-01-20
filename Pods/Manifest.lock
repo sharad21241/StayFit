@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (5.6.2)
+  - iCarousel (1.8.3)
 
 DEPENDENCIES:
   - Alamofire
+  - iCarousel
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - iCarousel
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
 
-PODFILE CHECKSUM: 64a3e9cf27a2f15aa885f05e814e71c9121ce283
+PODFILE CHECKSUM: 844c22483d0754501ad480ef364e0ab3680900ca
 
 COCOAPODS: 1.11.3

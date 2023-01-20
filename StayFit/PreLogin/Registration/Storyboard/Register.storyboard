@@ -628,20 +628,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-Xb-FVZ" customClass="CarouselView" customModule="StayFit" customModuleProvider="target">
-                                <rect key="frame" x="37" y="144" width="341" height="618"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6e3-O9-4BO" customClass="iCarousel">
+                                <rect key="frame" x="56" y="184" width="302" height="538"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d62-IV-Mgu">
+                                <rect key="frame" x="30" y="54" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBn-Eb-THI">
+                                <rect key="frame" x="30" y="83" width="354" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Z1-z0-CAb" customClass="MBButton" customModule="StayFit" customModuleProvider="target">
+                                <rect key="frame" x="30" y="782" width="354" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="yqT-tw-oPJ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QoS-Ku-Dyc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="RfK-Xb-FVZ" firstAttribute="top" secondItem="QoS-Ku-Dyc" secondAttribute="top" constant="100" id="00d-oa-bHa"/>
-                            <constraint firstItem="RfK-Xb-FVZ" firstAttribute="leading" secondItem="QoS-Ku-Dyc" secondAttribute="leading" constant="37" id="TvJ-1N-e9f"/>
-                            <constraint firstItem="QoS-Ku-Dyc" firstAttribute="trailing" secondItem="RfK-Xb-FVZ" secondAttribute="trailing" constant="36" id="iob-32-dvQ"/>
-                            <constraint firstItem="RfK-Xb-FVZ" firstAttribute="centerY" secondItem="QoS-Ku-Dyc" secondAttribute="centerY" id="n5h-nw-lnI"/>
+                            <constraint firstItem="d62-IV-Mgu" firstAttribute="top" secondItem="QoS-Ku-Dyc" secondAttribute="top" constant="10" id="4oo-Ei-kx9"/>
+                            <constraint firstItem="QoS-Ku-Dyc" firstAttribute="bottom" secondItem="0Z1-z0-CAb" secondAttribute="bottom" constant="25" id="643-Rq-OEU"/>
+                            <constraint firstItem="d62-IV-Mgu" firstAttribute="leading" secondItem="QoS-Ku-Dyc" secondAttribute="leading" constant="30" id="COh-zk-Xm1"/>
+                            <constraint firstItem="6e3-O9-4BO" firstAttribute="centerY" secondItem="QoS-Ku-Dyc" secondAttribute="centerY" id="OhI-sV-mmM"/>
+                            <constraint firstItem="sBn-Eb-THI" firstAttribute="leading" secondItem="QoS-Ku-Dyc" secondAttribute="leading" constant="30" id="Qq5-0s-f9o"/>
+                            <constraint firstItem="0Z1-z0-CAb" firstAttribute="leading" secondItem="QoS-Ku-Dyc" secondAttribute="leading" constant="30" id="RkL-Fs-Gzn"/>
+                            <constraint firstItem="6e3-O9-4BO" firstAttribute="width" secondItem="7hU-9F-lxY" secondAttribute="width" multiplier="0.73" id="WWx-DJ-D4L"/>
+                            <constraint firstItem="6e3-O9-4BO" firstAttribute="height" secondItem="7hU-9F-lxY" secondAttribute="height" multiplier="0.6" id="far-Wq-jxP"/>
+                            <constraint firstItem="6e3-O9-4BO" firstAttribute="centerX" secondItem="QoS-Ku-Dyc" secondAttribute="centerX" id="gwB-68-uIS"/>
+                            <constraint firstItem="QoS-Ku-Dyc" firstAttribute="trailing" secondItem="d62-IV-Mgu" secondAttribute="trailing" constant="30" id="i2e-2D-KN9"/>
+                            <constraint firstItem="sBn-Eb-THI" firstAttribute="top" secondItem="d62-IV-Mgu" secondAttribute="bottom" constant="8" symbolic="YES" id="jjQ-1h-LWv"/>
+                            <constraint firstItem="QoS-Ku-Dyc" firstAttribute="trailing" secondItem="sBn-Eb-THI" secondAttribute="trailing" constant="30" id="sdY-QV-REs"/>
+                            <constraint firstItem="QoS-Ku-Dyc" firstAttribute="trailing" secondItem="0Z1-z0-CAb" secondAttribute="trailing" constant="30" id="zr3-xm-aU3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnConfirm" destination="0Z1-z0-CAb" id="YPr-ni-TL1"/>
+                        <outlet property="lblSubTitle" destination="sBn-Eb-THI" id="TH4-s4-404"/>
+                        <outlet property="lblTitle" destination="d62-IV-Mgu" id="0sS-LS-qmk"/>
+                        <outlet property="viewCarousel" destination="6e3-O9-4BO" id="id0-xs-6tl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOZ-uC-NYP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

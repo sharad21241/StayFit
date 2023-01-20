@@ -269,6 +269,51 @@ public class Utils: NSObject {
         textfield.leftView = leftView;
         textfield.leftViewMode = UITextField.ViewMode.always
     }
+    
+    /// This is a function to do the basic set up of PageController
+    func setUpForCustomPageController(viwCarousel:AnyObject, type: Int = 0, selectedColor: UIColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorYellowLight), normalColor: UIColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)) -> MBLCAnimatedPageControl
+    {
+        //Code to add customer Page controller
+        let view: AnyObject?
+        if type == 0 //Means for Carousel view
+        {
+            view = viwCarousel as! iCarousel
+        }
+        else
+        {
+            view = viwCarousel as! UICollectionView
+        }
+        
+        
+        var rect:CGRect!
+        
+        if #available(iOS 12.0, *) {
+            rect = CGRect(x: 0, y: 0, width: viwCarousel.frame.size.width, height: 20)
+        } else {
+            // Fallback on earlier versions
+            rect = CGRect(x: 0, y: 0, width: viwCarousel.bounds.size.width, height: 20)
+        }
+        
+        let pageControl = MBLCAnimatedPageControl(frame: rect)
+        
+        if type == 0 //Means for Carousel view
+        {
+            pageControl.scrollStyle = .Carousel
+        }
+        else
+        {
+            pageControl.scrollStyle = .CollectionView
+        }
+        pageControl.indicatorDiameter = 4.0
+        pageControl.indicatorMargin = 3.0
+        pageControl.indicatorMultiple = 2.0
+        pageControl.pageStyle = .LCScaleColorPageStyle
+        pageControl.pageIndicatorColor = normalColor
+        pageControl.currentPageIndicatorColor = selectedColor
+        pageControl.sourceScrollView = view as! NSObject
+        pageControl.prepareShow()
+        return pageControl
+    }
      
     
     /// Function to get the plist of specific device
