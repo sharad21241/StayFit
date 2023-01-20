@@ -36,7 +36,7 @@ public class CustomTextField: UITextField {
     fileprivate var lblFloatPlaceholder:UILabel             = UILabel()
     fileprivate var lblError:UILabel                        = UILabel()
     
-    fileprivate let paddingX:CGFloat                        = 5.0
+    fileprivate let paddingX:CGFloat                        = -5.0
     
     fileprivate let paddingHeight:CGFloat                   = 10.0
     fileprivate var borderLayer:CALayer                     = CALayer()
