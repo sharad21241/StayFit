@@ -28,6 +28,6 @@ class SplashViewController: UIViewController {
         let sbRegister = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
         let vcRegister = sbRegister.instantiateViewController(withIdentifier: VCIdentifier.shared.OnboardingViewController) as! OnboardingViewController
         //Constants.shared.rootNavigation.setViewControllers([vcRegister], animated: true)
-        Constants.shared.appDel?.window??.rootViewController =  vcRegister
+        Constants.shared.appDel.window?.rootViewController =  vcRegister
     }
 }

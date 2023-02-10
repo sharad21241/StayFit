@@ -7,11 +7,13 @@
 
 import UIKit
 ///This class is used to customer onboarding
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: BaseViewController {
 
     //MARK: - IBOutlet Declaration
     @IBOutlet weak var lblCaption: UILabel!
     @IBOutlet weak var btnGetStarted: MBButton!
+    @IBOutlet weak var lblFitNest: UILabel!
+    @IBOutlet weak var lblX: UILabel!
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -28,12 +30,18 @@ class OnboardingViewController: UIViewController {
     /// function call to Update UI
     func updateUI()
     {
-        lblCaption.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXS, fontName: ThemeConstants.shared.FontRegular)
-        lblCaption.textColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
-        lblCaption.text = "Everybody Can Train"
+        //Setup UI labels
+        setupUILabel(label: lblFitNest, lblText: "Fitnest", size: ThemeConstants.shared.FontSizeXXXXXL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
         
-        btnGetStarted.setButton(buttonType: .ClearColorWhiteTextWithBorder)
-        btnGetStarted.setTitle("Get Started!", for: .normal)
+        setupUILabel(label: lblX, lblText: "X", size: ThemeConstants.shared.FontSizeXXXXXXXL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorWhite)
+        
+        setupUILabel(label: lblCaption, lblText: "Everybody Can Train", size: ThemeConstants.shared.FontSizeXXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
+        
+        //Setup button
+        let firstColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond)
+        let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
+
+        setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnGetStarted, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Get Started!", borderWidth: 1)
         btnGetStarted.addTarget(self, action: #selector(getStartedTapped), for: .touchUpInside)
     }
     

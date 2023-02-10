@@ -41,6 +41,11 @@
 		D04E39822977E80C00528B7F /* CommonTextfieldEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */; };
 		D04E398929781EC200528B7F /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E398829781EC200528B7F /* CardsViewController.swift */; };
 		D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */; };
+		D0C2E9F7299254C300FEAB92 /* TextFieldRightViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2E9F5299254C300FEAB92 /* TextFieldRightViewCell.swift */; };
+		D0C2E9F8299254C300FEAB92 /* TextFieldRightViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C2E9F6299254C300FEAB92 /* TextFieldRightViewCell.xib */; };
+		D0C2E9FA299267C900FEAB92 /* WelcomeUserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2E9F9299267C900FEAB92 /* WelcomeUserVC.swift */; };
+		D0C2E9FD29926EA900FEAB92 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2E9FC29926EA900FEAB92 /* DashboardViewController.swift */; };
+		D0C2EA0129926ECD00FEAB92 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0C2EA0029926ECD00FEAB92 /* Dashboard.storyboard */; };
 		D0DDF30929711F10003D3E30 /* fontello.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0DDF30829711F10003D3E30 /* fontello.ttf */; };
 		D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDF30A297128A5003D3E30 /* MBFontello.swift */; };
 		D0DDF30E2971537F003D3E30 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DDF30D2971537F003D3E30 /* BaseViewController.swift */; };
@@ -95,6 +100,11 @@
 		D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextfieldEntity.swift; sourceTree = "<group>"; };
 		D04E398829781EC200528B7F /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		D0C2E9F5299254C300FEAB92 /* TextFieldRightViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRightViewCell.swift; sourceTree = "<group>"; };
+		D0C2E9F6299254C300FEAB92 /* TextFieldRightViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldRightViewCell.xib; sourceTree = "<group>"; };
+		D0C2E9F9299267C900FEAB92 /* WelcomeUserVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeUserVC.swift; sourceTree = "<group>"; };
+		D0C2E9FC29926EA900FEAB92 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		D0C2EA0029926ECD00FEAB92 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		D0DDF30829711F10003D3E30 /* fontello.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontello.ttf; sourceTree = "<group>"; };
 		D0DDF30A297128A5003D3E30 /* MBFontello.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBFontello.swift; sourceTree = "<group>"; };
 		D0DDF30D2971537F003D3E30 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +201,7 @@
 		D0049DA3296C193F009FFDD9 /* PostLogin */ = {
 			isa = PBXGroup;
 			children = (
+				D0C2E9FB29926E9400FEAB92 /* Dashboard */,
 				D0DDF30C2971535E003D3E30 /* BaseClasses */,
 			);
 			path = PostLogin;
@@ -365,6 +376,8 @@
 				D00B95E62977D1DE00244DC0 /* TextFieldCell.xib */,
 				D038A8A5297A97B400EDAED3 /* CarouselView.xib */,
 				D038A8A8297A97DE00EDAED3 /* CarouselView.swift */,
+				D0C2E9F5299254C300FEAB92 /* TextFieldRightViewCell.swift */,
+				D0C2E9F6299254C300FEAB92 /* TextFieldRightViewCell.xib */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -403,6 +416,31 @@
 			path = NavigationController;
 			sourceTree = "<group>";
 		};
+		D0C2E9FB29926E9400FEAB92 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				D0C2E9FF29926EB900FEAB92 /* Controller */,
+				D0C2E9FE29926EB200FEAB92 /* Storyboard */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		D0C2E9FE29926EB200FEAB92 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				D0C2EA0029926ECD00FEAB92 /* Dashboard.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D0C2E9FF29926EB900FEAB92 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0C2E9FC29926EA900FEAB92 /* DashboardViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		D0DDF30729711EF3003D3E30 /* Fontello */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,6 +465,7 @@
 			isa = PBXGroup;
 			children = (
 				D0DDF32129717BCA003D3E30 /* LoginViewController.swift */,
+				D0C2E9F9299267C900FEAB92 /* WelcomeUserVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -515,10 +554,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0049DC0296C22C1009FFDD9 /* iPhone6.plist in Resources */,
+				D0C2E9F8299254C300FEAB92 /* TextFieldRightViewCell.xib in Resources */,
 				D0049DC1296C22C1009FFDD9 /* iPhone.plist in Resources */,
 				D0049DC3296C22C1009FFDD9 /* iPhone6Plus.plist in Resources */,
 				D0DDF30929711F10003D3E30 /* fontello.ttf in Resources */,
 				D0DDF31B297172A0003D3E30 /* Poppins-SemiBold.ttf in Resources */,
+				D0C2EA0129926ECD00FEAB92 /* Dashboard.storyboard in Resources */,
 				D0049DA8296C199F009FFDD9 /* SplashScreen.storyboard in Resources */,
 				D0049D9A296C191A009FFDD9 /* LaunchScreen.storyboard in Resources */,
 				D0DDF31629715EA2003D3E30 /* Poppins.ttf in Resources */,
@@ -599,6 +640,7 @@
 				D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */,
 				D00B95E72977D1DE00244DC0 /* TextFieldCell.swift in Sources */,
 				D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */,
+				D0C2E9F7299254C300FEAB92 /* TextFieldRightViewCell.swift in Sources */,
 				D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */,
 				D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */,
 				D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */,
@@ -607,7 +649,9 @@
 				D0F32FF4296FD92E00D9390B /* ThirdTourViewController.swift in Sources */,
 				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
 				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
+				D0C2E9FD29926EA900FEAB92 /* DashboardViewController.swift in Sources */,
 				D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */,
+				D0C2E9FA299267C900FEAB92 /* WelcomeUserVC.swift in Sources */,
 				D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */,
 				D0F32FF2296FD91E00D9390B /* SecondTourViewController.swift in Sources */,
 				D0FB8466296ED9920079482A /* FirstTourViewController.swift in Sources */,
@@ -686,7 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -740,7 +784,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -771,7 +815,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Register;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -813,7 +857,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Register;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

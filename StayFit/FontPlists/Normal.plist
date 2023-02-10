@@ -21,7 +21,7 @@
 	<key>FontColorTextGray</key>
 	<string>77777A</string>
 	<key>FontColorTextFieldBG</key>
-	<string>E1E1E1</string>
+	<string>F7F8F8</string>
 	<key>FontColorLightTextFieldBG</key>
 	<string>E7E7E7</string>
 	<key>FontColorPlaceHolderGray</key>
@@ -58,17 +58,17 @@
 	<string>DCF1FF</string>
 	<key>FontColorSimType</key>
 	<string>8C8C8C</string>
-	<key>FontColorAddVPA</key>
-	<string>DDDDDD</string>
-	<key>FontColorLineLbl</key>
-	<string>5D7DDC</string>
+	<key>FontColorPurpleLinear</key>
+	<string>EEA4CE</string>
+	<key>FontColorPurple</key>
+	<string>C58BF2</string>
 	<key>FontColorPrimaryBackBlue</key>
 	<string>E2EAFF</string>
 	<key>FontColorPayMoneyBlue</key>
 	<string>D9F0FF</string>
-    <key>FontColorBlueLinear</key>
-    <string>92A3FD</string>
-    <key>FontColorBlueLinearSecond</key>
-    <string>9DCEFF</string>
+	<key>FontColorBlueLinear</key>
+	<string>92A3FD</string>
+	<key>FontColorBlueLinearSecond</key>
+	<string>9DCEFF</string>
 </dict>
 </plist>

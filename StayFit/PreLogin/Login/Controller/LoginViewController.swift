@@ -53,7 +53,7 @@ class LoginViewController: BaseViewController {
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
 
         //Setup buttons
-        self.setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnLogin, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.FontBold, fontSize: ThemeConstants.shared.FontSizeXXXXL, title: "Login")
+        self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnLogin, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXXL, title: "Login", isAttributed: true, icon: MBFontello.shared.icon_login, isIconFirst: true)
         
         //Social Icons
         btnFB.setImage(UIImage(named: "facebook"), for: .normal)
@@ -88,4 +88,11 @@ class LoginViewController: BaseViewController {
         }
     }
     
+    /// function call for button tap action
+    /// - Parameter sender: UIButton
+    @IBAction func btnLoginTapped(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.WelcomeUserVC) as! WelcomeUserVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

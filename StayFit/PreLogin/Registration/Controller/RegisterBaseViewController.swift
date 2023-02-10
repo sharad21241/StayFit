@@ -54,7 +54,7 @@ class RegisterBaseViewController: BaseViewController {
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
 
         //Setup buttons
-        self.setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnRegister, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.FontBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Register")
+        self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnRegister, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Register")
         btnRegister.addTarget(self, action: #selector(onTapRegister), for: .touchUpInside)
         
         //Social Icons

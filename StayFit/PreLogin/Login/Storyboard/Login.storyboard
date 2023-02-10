@@ -58,6 +58,9 @@
                                                 </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="btnLoginTapped:" destination="eSF-J1-Lpu" eventType="touchUpInside" id="nmW-Kk-WrW"/>
+                                                </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="NEQ-s5-OVC">
                                                 <rect key="frame" x="127" y="494.5" width="160" height="60"/>
@@ -188,10 +191,84 @@
             </objects>
             <point key="canvasLocation" x="2426.0869565217395" y="61.607142857142854"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Welcome UserVC-->
+        <scene sceneID="exg-FH-gDU">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeUserVC" id="t6c-GP-KD5" customClass="WelcomeUserVC" customModule="StayFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fFD-n0-ehW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMv-dw-yiA">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="successRegistration" translatesAutoresizingMaskIntoConstraints="NO" id="GLg-Z4-1p1">
+                                        <rect key="frame" x="22" y="100" width="373" height="401"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Geu-sh-r9u">
+                                        <rect key="frame" x="22" y="509" width="373" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5i-9E-m7M">
+                                        <rect key="frame" x="60" y="540" width="294" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="GLg-Z4-1p1" secondAttribute="trailing" constant="19" id="2y9-Rg-47l"/>
+                                    <constraint firstItem="GLg-Z4-1p1" firstAttribute="top" secondItem="TMv-dw-yiA" secondAttribute="top" constant="100" id="AmI-np-y5N"/>
+                                    <constraint firstItem="d5i-9E-m7M" firstAttribute="leading" secondItem="TMv-dw-yiA" secondAttribute="leading" constant="60" id="D4P-dl-eWw"/>
+                                    <constraint firstItem="GLg-Z4-1p1" firstAttribute="height" secondItem="TMv-dw-yiA" secondAttribute="height" multiplier="0.49" id="KVT-lk-nmz"/>
+                                    <constraint firstItem="d5i-9E-m7M" firstAttribute="top" secondItem="Geu-sh-r9u" secondAttribute="bottom" constant="10" id="NK9-2f-Hzv"/>
+                                    <constraint firstAttribute="trailing" secondItem="d5i-9E-m7M" secondAttribute="trailing" constant="60" id="UUU-7X-NMb"/>
+                                    <constraint firstItem="Geu-sh-r9u" firstAttribute="leading" secondItem="GLg-Z4-1p1" secondAttribute="leading" id="YGi-y3-6QI"/>
+                                    <constraint firstItem="Geu-sh-r9u" firstAttribute="top" secondItem="GLg-Z4-1p1" secondAttribute="bottom" constant="8" symbolic="YES" id="dqh-Ct-TsI"/>
+                                    <constraint firstItem="Geu-sh-r9u" firstAttribute="trailing" secondItem="GLg-Z4-1p1" secondAttribute="trailing" id="jHS-2t-JlZ"/>
+                                    <constraint firstItem="GLg-Z4-1p1" firstAttribute="leading" secondItem="TMv-dw-yiA" secondAttribute="leading" constant="22" id="oeh-wW-GET"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WWb-pS-kez" customClass="MBButton" customModule="StayFit" customModuleProvider="target">
+                                <rect key="frame" x="30" y="792" width="354" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="tvw-GF-83y"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="btnContinue:" destination="t6c-GP-KD5" eventType="touchUpInside" id="agx-di-QkL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dD1-9T-xRT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="TMv-dw-yiA" firstAttribute="trailing" secondItem="dD1-9T-xRT" secondAttribute="trailing" id="3yp-yh-Luj"/>
+                            <constraint firstItem="dD1-9T-xRT" firstAttribute="bottom" secondItem="WWb-pS-kez" secondAttribute="bottom" constant="10" id="Wxe-gw-Ke6"/>
+                            <constraint firstItem="TMv-dw-yiA" firstAttribute="leading" secondItem="dD1-9T-xRT" secondAttribute="leading" id="Zm1-nC-zbA"/>
+                            <constraint firstItem="WWb-pS-kez" firstAttribute="leading" secondItem="dD1-9T-xRT" secondAttribute="leading" constant="30" id="c0A-pN-4nL"/>
+                            <constraint firstItem="TMv-dw-yiA" firstAttribute="bottom" secondItem="dD1-9T-xRT" secondAttribute="bottom" id="grO-RJ-Iph"/>
+                            <constraint firstItem="TMv-dw-yiA" firstAttribute="top" secondItem="dD1-9T-xRT" secondAttribute="top" id="kt1-do-9xE"/>
+                            <constraint firstItem="dD1-9T-xRT" firstAttribute="trailing" secondItem="WWb-pS-kez" secondAttribute="trailing" constant="30" id="n5K-f6-no5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnGoToHome" destination="WWb-pS-kez" id="T2f-9y-N18"/>
+                        <outlet property="lblSubTitle" destination="d5i-9E-m7M" id="h3p-qP-M32"/>
+                        <outlet property="lblTitle" destination="Geu-sh-r9u" id="tIz-64-iBi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBO-sl-8Ne" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3159.4202898550725" y="61.607142857142854"/>
+        </scene>
+        <!--Custom Navigation View Controller-->
         <scene sceneID="Pm1-dC-33I">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S8h-bm-uCz" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S8h-bm-uCz" customClass="CustomNavigationViewController" customModule="StayFit" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uOi-Ex-dxx">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -210,6 +287,7 @@
     <resources>
         <image name="facebook" width="20" height="20"/>
         <image name="google" width="20" height="20"/>
+        <image name="successRegistration" width="278" height="304"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

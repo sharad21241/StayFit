@@ -7,41 +7,33 @@
 
 import UIKit
 ///This is customer onboarding view controller
-class FourthTourViewController: UIViewController {
+class FourthTourViewController: BaseViewController {
 
+    //MARK: - IBOutlet Declaration
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDetails: UILabel!
     
     //MARK: - Variable Declaration
-    let fontBold = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeL, fontName: ThemeConstants.shared.FontBold)
-    let fontRegular = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontRegular)
-    let colorBlack = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack)
-    let colorGray = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
-    
+
+    //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.updateUI()
     }
     
+    //MARK: - User Defined methods
+    /// function call to update ui
     func updateUI()
     {
-        setupLabel(label: lblTitle, font: fontBold, color: colorBlack, text: "Improve Sleep Quality")
-        setupLabel(label: lblDetails, font: fontRegular, color: colorGray, text: "Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning")
+        //Setup UILabels
+        setupUILabel(label: lblTitle, lblText: "Improve Sleep Quality", size: ThemeConstants.shared.FontSizeL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
+        
+        setupUILabel(label: lblDetails, lblText: "Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
     }
-    
-    /// Function call to setup uilabels
-    /// - Parameters:
-    ///   - label: label description
-    ///   - font: font description
-    ///   - color: color description
-    ///   - text: text description
-    func setupLabel(label: UILabel, font: UIFont, color: UIColor, text: String)
-    {
-        label.font = font
-        label.textColor = color
-        label.text = text
-    }
+
+    /// Next button action
+    /// - Parameter sender: sender description
     @IBAction func btnNext(_ sender: Any) {
         let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
         let nextVC = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.RegisterBaseViewController) as! RegisterBaseViewController

@@ -7,17 +7,13 @@
 
 import UIKit
 ///This is customer onboarding view controller
-class SecondTourViewController: UIViewController {
+class SecondTourViewController: BaseViewController {
     //MARK: - IBOutlet Declarations
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblDetails: UILabel!
     @IBOutlet weak var btnNext: UIButton!
     
     //MARK: - Variable Declaration
-    let fontBold = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeL, fontName: ThemeConstants.shared.FontBold)
-    let fontRegular = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontRegular)
-    let colorBlack = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack)
-    let colorGray = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -30,23 +26,12 @@ class SecondTourViewController: UIViewController {
     /// function call to update UI
     func updateUI()
     {
-        setupLabel(label: lblTitle, font: fontBold, color: colorBlack, text: "Get Burn")
-        setupLabel(label: lblDetails, font: fontRegular, color: colorGray, text: "Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever")
+        //setup UILabels
+        setupUILabel(label: lblTitle, lblText: "Get Burn", size: ThemeConstants.shared.FontSizeL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
+        
+        setupUILabel(label: lblDetails, lblText: "Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
     }
-    
-    /// Function call to setup uilabels
-    /// - Parameters:
-    ///   - label: label description
-    ///   - font: font description
-    ///   - color: color description
-    ///   - text: text description
-    func setupLabel(label: UILabel, font: UIFont, color: UIColor, text: String)
-    {
-        label.font = font
-        label.textColor = color
-        label.text = text
-    }
-    
+
     //MARK: - IBActions
     /// function calls on tap of next button
     /// - Parameter sender: sender description

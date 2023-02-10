@@ -73,8 +73,8 @@ public class ThemeConstants: NSObject {
     public let FontColorLeftMenuBack = "FontColorLeftMenuBack"
     
     public let FontColorSimType = "FontColorSimType"
-    public let FontColorAddVPA = "FontColorAddVPA"
-    public let FontColorLineLbl = "FontColorLineLbl"
+    public let FontColorPurpleLinear = "FontColorPurpleLinear"
+    public let FontColorPurple = "FontColorPurple"
     public let FontColorPrimaryBackBlue = "FontColorPrimaryBackBlue"
     public let FontColorPayMoneyBlue = "FontColorPayMoneyBlue"
     public let FontColorBlueLinear = "FontColorBlueLinear"

@@ -11,6 +11,20 @@ import UIKit
 public class Utils: NSObject {
     public static let shared = Utils()
     
+    /// Gradient to label/text
+    /// - Parameters:
+    ///   - firstColor: firstColor description
+    ///   - secondColor: secondColor description
+    /// - Returns: description
+    func setupGradientText(firstColor: UIColor, secondColor: UIColor, control: AnyObject) -> CAGradientLayer {
+        var gradient = CAGradientLayer()
+        gradient = CAGradientLayer(start: .centerLeft, end: .centerRight, colors: [firstColor.cgColor, secondColor.cgColor], type: .axial)
+        if let ctrl = control as? UIView
+        {
+            gradient.frame = ctrl.layer.bounds
+        }
+        return gradient
+    }
     
     /// function call to set cornerRadius to any view
     /// - Parameters:
@@ -346,6 +360,7 @@ public enum ButtonTypeFormat {
     case BlueColorWhiteTextSmallImage
     case WhiteColorBlueText
     case ClearColorWhiteTextWithBorder
+    case ClearColorGradientText
 }
 
 // This enum is used for identifying button State
@@ -524,6 +539,8 @@ public class MBButton: UIButton {
             self.layer.cornerRadius = 10.0
             self.layer.borderWidth = 1.0
             self.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack).cgColor
+            break
+        case .ClearColorGradientText:
             break
         }
         

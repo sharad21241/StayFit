@@ -45,13 +45,14 @@ class CardsViewController: BaseViewController {
     {
         //Setup UILabels
         setupUILabel(label: lblTitle, lblText: "What is your goal ?", size: ThemeConstants.shared.FontSizeXXXL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
-        setupUILabel(label: lblSubTitle, lblText: "It will help us to choose a best program for you", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
+        setupUILabel(label: lblSubTitle, lblText: "It will help us to choose a best program for you", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
         
         let firstColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond)
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
         
         //Setup buttons
-        setupButtonWithGradient(firstColor: firstColor, SecondColor: lastColor, btn: btnConfirm, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXL, title: "Confirm")
+        setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnConfirm, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXL, title: "Confirm")
+        btnConfirm.addTarget(self, action: #selector(btnNextTapped), for: .touchUpInside)
     }
     
     /// function call to setup the cards to show
@@ -86,6 +87,14 @@ class CardsViewController: BaseViewController {
         pageControl.numberOfPages = arrDetails.count
         viewCarousel.scrollToItem(at: iSelectedCard, animated: true)
     }
+    
+    /// function call on next button tap
+    @objc func btnNextTapped()
+    {
+        let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 //MARK: - iCarouselDelegate, iCarouselDataSource
 extension CardsViewController: iCarouselDelegate, iCarouselDataSource{
@@ -117,7 +126,7 @@ extension CardsViewController: iCarouselDelegate, iCarouselDataSource{
     }
     
     func carousel(_ _carousel: iCarousel, itemTransformForOffset offset: CGFloat, baseTransform atransform: CATransform3D) -> CATransform3D {
-        let distance: Float = 100.0
+        let distance: Float = 130.00
         //number of pixels to move the items away from camera
         let z: CGFloat = CGFloat(-fminf(1.0, Float(CGFloat(abs(offset)))) * distance)
         return CATransform3DTranslate(atransform, offset * 1.15 * _carousel.itemWidth, 0.0, z)

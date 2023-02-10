@@ -11,8 +11,8 @@ import UIKit
 public class Constants: NSObject {
     
     public static let shared = Constants()
-    public var rootNavigation = CustomNavigationViewController()
-    public var appDel = UIApplication.shared.delegate
+    let appDel : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    let uiScreen: UIScreen = UIScreen.main
     //MARK: - Device related information
     var iPhone: Bool {
         return UIDevice().userInterfaceIdiom == .phone

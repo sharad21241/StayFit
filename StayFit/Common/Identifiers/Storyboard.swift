@@ -14,6 +14,7 @@ public class Storyboard : NSObject {
     //MARK: - Storyboards
     let Register = "Register"
     let Login = "Login"
+    let Dashboard = "Dashboard"
     
     
     
@@ -34,9 +35,12 @@ public class VCIdentifier: NSObject {
     let LoginViewController = "LoginViewController"
     let PersonalDetailsVC = "PersonalDetailsVC"
     let CardsViewController = "CardsViewController"
+    let WelcomeUserVC = "WelcomeUserVC"
+    let DashboardViewController = "DashboardViewController"
     
     //MARK: -  TableView Cells
     let textFieldCell = "TextFieldCell"
+    let TextFieldRightViewCell = "TextFieldRightViewCell"
     let CarouselView = "CarouselView"
     
 }

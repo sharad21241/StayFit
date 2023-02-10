@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="TextFieldRightViewCell" customModule="StayFit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="424" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="424" height="82"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zo3-Gt-aBS" customClass="CustomTextField" customModule="StayFit" customModuleProvider="target">
+                        <rect key="frame" x="30" y="15" width="304" height="52"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haG-kS-coT">
+                        <rect key="frame" x="344" y="16" width="50" height="50"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="WFe-3u-Cow"/>
+                            <constraint firstAttribute="height" constant="50" id="hcM-nG-mZx"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KG" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="STu-UV-r3m">
+                        <rect key="frame" x="344" y="15" width="50" height="52"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="STu-UV-r3m" firstAttribute="trailing" secondItem="haG-kS-coT" secondAttribute="trailing" id="8Ub-OR-Oe5"/>
+                    <constraint firstAttribute="bottom" secondItem="Zo3-Gt-aBS" secondAttribute="bottom" constant="15" id="ETn-m6-a1I"/>
+                    <constraint firstItem="haG-kS-coT" firstAttribute="centerY" secondItem="Zo3-Gt-aBS" secondAttribute="centerY" id="FEY-Sk-E4n"/>
+                    <constraint firstAttribute="trailing" secondItem="haG-kS-coT" secondAttribute="trailing" constant="30" id="JSl-Zl-nU3"/>
+                    <constraint firstItem="Zo3-Gt-aBS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="MWW-y6-KgG"/>
+                    <constraint firstItem="STu-UV-r3m" firstAttribute="leading" secondItem="haG-kS-coT" secondAttribute="leading" id="dS1-32-QN5"/>
+                    <constraint firstItem="STu-UV-r3m" firstAttribute="bottom" secondItem="Zo3-Gt-aBS" secondAttribute="bottom" id="ebE-P8-dIq"/>
+                    <constraint firstItem="Zo3-Gt-aBS" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="gZr-GN-sZV"/>
+                    <constraint firstItem="STu-UV-r3m" firstAttribute="top" secondItem="Zo3-Gt-aBS" secondAttribute="top" id="ijm-VP-vxN"/>
+                    <constraint firstItem="STu-UV-r3m" firstAttribute="centerY" secondItem="haG-kS-coT" secondAttribute="centerY" id="l1s-MW-vUw"/>
+                    <constraint firstItem="haG-kS-coT" firstAttribute="leading" secondItem="Zo3-Gt-aBS" secondAttribute="trailing" constant="10" id="l6P-yn-TNM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblView" destination="STu-UV-r3m" id="sae-tr-sB1"/>
+                <outlet property="rightView" destination="haG-kS-coT" id="H49-oL-Jbw"/>
+                <outlet property="txtField" destination="Zo3-Gt-aBS" id="V9d-V6-hz3"/>
+            </connections>
+            <point key="canvasLocation" x="-88.405797101449281" y="107.8125"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
