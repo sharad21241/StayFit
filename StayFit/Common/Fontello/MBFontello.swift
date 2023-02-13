@@ -40,5 +40,9 @@ class MBFontello: NSObject {
     let ic_time = "\u{e813}"
     let ic_time_repeat = "\u{e814}"
     let ic_cancel = "\u{e815}"
+    let ic_notification = "\u{e820}"
+    let ic_camera = "\u{e81d}"
+    let ic_home = "\u{e81e}"
+    let ic_human = "\u{e81f}"
 
 }

@@ -45,9 +45,9 @@ class WelcomeUserVC: BaseViewController {
     @IBAction func btnContinue(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: Storyboard.shared.Dashboard, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.DashboardViewController) as! DashboardViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-//        Constants.shared.appDel.rootNavigation.setViewControllers([vc], animated: true)
-//        Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
+        //self.navigationController?.pushViewController(vc, animated: true)
+        Constants.shared.appDel.rootNavigation.setViewControllers([vc], animated: true)
+        Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
         
     }
 }

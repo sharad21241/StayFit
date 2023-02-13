@@ -26,6 +26,8 @@ class CardsViewController: BaseViewController {
     var pageControl: MBLCAnimatedPageControl!
     var iSelectedCard = -1
     
+    var isFormPrelogin = false
+    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         self.updateUI()
@@ -91,9 +93,16 @@ class CardsViewController: BaseViewController {
     /// function call on next button tap
     @objc func btnNextTapped()
     {
-        let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        if isFormPrelogin {
+            let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+            Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
+        }
+        else {
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        //self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 //MARK: - iCarouselDelegate, iCarouselDataSource
@@ -113,8 +122,9 @@ extension CardsViewController: iCarouselDelegate, iCarouselDataSource{
     }
     
     func carouselDidEndScrollingAnimation(_ carousel: iCarousel){
-        
         pageControl.changePage(carousel.currentItemIndex)
+        let data = arrDetails[carousel.currentItemIndex]
+        Constants.shared.program = data.title ?? ""
     }
     
     //For spacing of two items

@@ -50,6 +50,7 @@ class OnboardingViewController: BaseViewController {
     @objc func getStartedTapped() {
         let sbRegister = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
         let vcRegister = sbRegister.instantiateViewController(withIdentifier: VCIdentifier.shared.FirstTourViewController) as! FirstTourViewController
-        self.navigationController?.pushViewController(vcRegister, animated: true)
+        Constants.shared.appDel.rootNavigation.setViewControllers([vcRegister], animated: true)
+        Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
     }
 }

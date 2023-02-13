@@ -37,6 +37,7 @@ public class VCIdentifier: NSObject {
     let CardsViewController = "CardsViewController"
     let WelcomeUserVC = "WelcomeUserVC"
     let DashboardViewController = "DashboardViewController"
+    let ProfileViewController = "ProfileViewController"
     
     //MARK: -  TableView Cells
     let textFieldCell = "TextFieldCell"

@@ -107,6 +107,7 @@ class RegisterBaseViewController: BaseViewController {
     {
         let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.PersonalDetailsVC) as! PersonalDetailsVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.pushViewController(vc, animated: true)
+        Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
     }
 }

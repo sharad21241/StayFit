@@ -13,6 +13,7 @@ public class Constants: NSObject {
     public static let shared = Constants()
     let appDel : AppDelegate = UIApplication.shared.delegate as! AppDelegate
     let uiScreen: UIScreen = UIScreen.main
+    var program = ""
     //MARK: - Device related information
     var iPhone: Bool {
         return UIDevice().userInterfaceIdiom == .phone

@@ -17,7 +17,7 @@
 	<key>FontColorGray_GL</key>
 	<string>77777A</string>
 	<key>FontColorLightGray</key>
-	<string>E4E4E4</string>
+	<string>F7F8F8</string>
 	<key>FontColorTextGray</key>
 	<string>77777A</string>
 	<key>FontColorTextFieldBG</key>
@@ -38,8 +38,6 @@
 	<string>77BADE</string>
 	<key>FontColorYellow</key>
 	<string>FFFF00</string>
-	<key>FontColorYellow_GL</key>
-	<string>FFDB01</string>
 	<key>FontColorSVGGray</key>
 	<string>D3D3D3</string>
 	<key>FontColorYellowDark</key>

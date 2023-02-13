@@ -93,6 +93,7 @@ class LoginViewController: BaseViewController {
     @IBAction func btnLoginTapped(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.WelcomeUserVC) as! WelcomeUserVC
-        self.navigationController?.pushViewController(vc, animated: true)
+        //self.navigationController?.pushViewController(vc, animated: true)
+        Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
     }
 }

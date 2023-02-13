@@ -16,9 +16,9 @@ public class Utils: NSObject {
     ///   - firstColor: firstColor description
     ///   - secondColor: secondColor description
     /// - Returns: description
-    func setupGradientText(firstColor: UIColor, secondColor: UIColor, control: AnyObject) -> CAGradientLayer {
+    func setupGradientText(firstColor: UIColor, secondColor: UIColor,  type: CAGradientLayerType = .axial, start: CAGradientLayer.Point = .centerLeft, end: CAGradientLayer.Point = .centerRight,control: AnyObject) -> CAGradientLayer {
         var gradient = CAGradientLayer()
-        gradient = CAGradientLayer(start: .centerLeft, end: .centerRight, colors: [firstColor.cgColor, secondColor.cgColor], type: .axial)
+        gradient = CAGradientLayer(start: start, end: end, colors: [firstColor.cgColor, secondColor.cgColor], type: type)
         if let ctrl = control as? UIView
         {
             gradient.frame = ctrl.layer.bounds
@@ -319,6 +319,22 @@ public class Utils: NSObject {
         }
         
         return path
+    }
+    
+    /// store value in persistece memory
+    /// - Parameters:
+    ///   - key: string
+    ///   - value: string
+    func setUserDefault(key: String, value: String)
+    {
+        UserDefaults.standard.setValue(value, forKey: key)
+    }
+    
+    /// get value
+    /// - Parameter key: string
+    /// - Returns: string
+    func getUserDefault(key: String) -> String {
+        return UserDefaults.standard.string(forKey: key)!
     }
 }
 

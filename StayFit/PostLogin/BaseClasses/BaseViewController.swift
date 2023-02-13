@@ -13,10 +13,16 @@ public enum placeAt {
 }
 
 //enum of navigationBar right buttons
-public enum ButtonType {
+public enum RightButtonType {
     case noRightButton
     case rightButtons
     case MoreButton
+}
+
+//enum of navigationBar right buttons
+public enum BackButtonType {
+    case leftArrowButton
+    case crossButton
 }
 
 ///this is a base class
@@ -55,7 +61,7 @@ class BaseViewController: UIViewController {
     ///   - title: title description
     ///   - isAttributed: isAttributed description
     ///   - icon: icon description
-    func setupButtonWithGradient(firstColor: UIColor, secondColor: UIColor, btn: MBButton, btnType: ButtonTypeFormat, fontName: String, fontSize: String, title: String, isAttributed: Bool = false, icon: String = "", borderWidth: CGFloat = 0, isIconFirst: Bool = false)
+    func setupButtonWithGradient(firstColor: UIColor, secondColor: UIColor, btn: MBButton, btnType: ButtonTypeFormat, fontName: String, fontSize: String, title: String, isAttributed: Bool = false, icon: String = "", borderWidth: CGFloat = 0, isIconFirst: Bool = false, radius: Float = 30)
     {
         let gradient = CAGradientLayer(start: .centerLeft, end: .centerRight, colors: [firstColor.cgColor, secondColor.cgColor], type: .axial)
         let font = Utils.shared.getSpecificFont(size: fontSize, fontName: fontName)
@@ -67,7 +73,7 @@ class BaseViewController: UIViewController {
         btn.tintColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         btn.titleLabel?.textColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         btn.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond).cgColor
-        Utils.shared.cornerRadiusTo(control: btn, radius: 30)
+        Utils.shared.cornerRadiusTo(control: btn, radius: radius)
         
         if isAttributed {
             let fontello = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXL, fontName: ThemeConstants.shared.FontFontello)
@@ -127,10 +133,11 @@ class BaseViewController: UIViewController {
         return strAttributedText
     }
     
-    func setupNavigationBar(title: String, rightButtonType: ButtonType)
+    func setupNavigationBar(title: String, backButtonType: BackButtonType, rightButtonType: RightButtonType)
     {
        // let rightButton = UIBarButtonItem(image: UIImage(named: "right-icon"), style: .plain, target: self, action: #selector(rightButtonTapped))
         DispatchQueue.main.async {
+            //Left - Back button
             let colorBlack = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack)
             let btnBack = UIButton(frame: CGRect(x: 0, y: 10, width: 35, height: 35))
             btnBack.backgroundColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray)
@@ -141,14 +148,23 @@ class BaseViewController: UIViewController {
             btnBack.setTitleColor(colorBlack, for: .normal)
             btnBack.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXL, fontName: ThemeConstants.shared.FontFontello)
             btnBack.setTitle(MBFontello.shared.icon_left, for: .normal)
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnBack)
-            
+            //Right - Cross button
+            let btnCross = UIButton(frame: CGRect(x: 0, y: 10, width: 35, height: 35))
+            btnCross.backgroundColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray)
+            btnCross.titleLabel?.textAlignment = .left
+            btnCross.clipsToBounds = true
+            Utils.shared.cornerRadiusTo(control: btnCross)
+            btnCross.addTarget(self, action: #selector(self.backButtonTapped), for: .touchUpInside)
+            btnCross.setTitleColor(colorBlack, for: .normal)
+            btnCross.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXL, fontName: ThemeConstants.shared.FontFontello)
+            btnCross.setTitle(MBFontello.shared.ic_cancel, for: .normal)
+            //Right - More button
             let btnMore = UIButton(frame: CGRect(x: -15, y: 0, width: 35, height: 35))
             btnMore.backgroundColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray)
             btnMore.titleLabel?.textAlignment = .right
             btnMore.clipsToBounds = true
             Utils.shared.cornerRadiusTo(control: btnMore)
-            //btnMore.addTarget(self, action: #selector(self.backButtonTapped), for: .touchUpInside)
+            btnMore.addTarget(self, action: #selector(self.moreButtonTapped), for: .touchUpInside)
             btnMore.setTitleColor(colorBlack, for: .normal)
             btnMore.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXL, fontName: ThemeConstants.shared.FontFontello)
             btnMore.setTitle(MBFontello.shared.icon_twodot, for: .normal)
@@ -162,10 +178,10 @@ class BaseViewController: UIViewController {
             btnShare.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXL, fontName: ThemeConstants.shared.FontFontello)
             btnShare.setTitle(MBFontello.shared.ic_share, for: .normal)
             btnShare.setTitleColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray), for: .normal)
+            btnShare.addTarget(self, action: #selector(self.shareButtonTapped), for: .touchUpInside)
             btnShare.clipsToBounds = true
             Utils.shared.cornerRadiusTo(control: btnShare)
-            //btnSyncBene.addTarget(self, action: #selector(self.btnSyncTapped(_:)), for: .touchUpInside)
-            
+            //Screen Title
             let iWidth = self.view.frame.width * 0.50
             let viw = UIView(frame: CGRect(x: 0, y: 10, width: iWidth, height: 44))
             // else we need to show title and back button
@@ -183,6 +199,18 @@ class BaseViewController: UIViewController {
             //Set the title view
             self.navigationItem.titleView = viw
             
+            //Backbutton types
+            switch backButtonType {
+            case .leftArrowButton:
+                do {
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnBack)
+                }
+            case .crossButton:
+                do {
+                    self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnCross)
+                }
+            }
+            //Right button types
             switch rightButtonType {
             case .noRightButton:
                 //No buttons at Right
@@ -207,8 +235,13 @@ class BaseViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    @objc func rightButtonTapped()
+    @objc func shareButtonTapped()
     {
-        
+        print("Share button Tapped")
+    }
+    
+    @objc func moreButtonTapped()
+    {
+        print("More button Tapped")
     }
 }
