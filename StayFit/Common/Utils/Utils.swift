@@ -329,12 +329,114 @@ public class Utils: NSObject {
     {
         UserDefaults.standard.setValue(value, forKey: key)
     }
-    
+
     /// get value
     /// - Parameter key: string
     /// - Returns: string
     func getUserDefault(key: String) -> String {
         return UserDefaults.standard.string(forKey: key)!
+    }
+    
+    
+    //MARK:- Set User Default
+    
+    /// Fucntion to set the value in presistant memory
+    ///
+    /// - Parameters:
+    ///   - key: key
+    ///   - value: value
+//    public func setUserDefault (key : String , value : String)
+//    {
+//        //Then Encrypt the string
+//        /let encryptedValue = EncryptionDecryption.shared.encrypt3DESForUserDefaults(value: value, bundleId: Constants.shared.bundleID)
+//        //Then Set value
+//        let defaults =  UserDefaults.standard
+//        defaults.set(encryptedValue, forKey: key)
+//        defaults.synchronize()
+//    }
+//
+//    /// Fucntion to set the value in presistant memory
+//    ///
+//    /// - Parameters:
+//    ///   - key: key
+//    ///   - value: value
+    public func setUserDefaultBoolValue (key : String , value : Bool)
+    {
+        //Here first convert Bool value to string
+        let strBool = String(value)
+        self.setUserDefault(key: key, value:strBool)
+    }
+    
+    /// Fucntion to set the value in presistant memory
+    ///
+    /// - Parameters:
+    ///   - key: key
+    ///   - value: value
+    public func setUserDefaultIntValue (key : String , value : Int)
+    {
+        //Here first convert Int value to string
+        let strInt = String(value)
+        self.setUserDefault(key: key, value:strInt)
+    }
+    
+    /// Function to get the user default values
+    ///
+    /// - Parameter key: key
+    /// - Returns: string
+//    public func getUserDefault (key : String ) -> String
+//    {
+//        //Fetch the value
+//        let defaults =  UserDefaults.standard
+//        var str = ""
+//        if let value = defaults.string(forKey: key)
+//        {
+//            str = value
+//        }
+//
+//        //Now decrypt the value
+//       // let decryptedValue = EncryptionDecryption.shared.decrypt3DESForUserDefaults(value: str, bundleId: Constants.shared.bundleID)
+//
+//        return decryptedValue
+//    }
+    
+    /// Function to get the user default values
+    ///
+    /// - Parameter key: key
+    /// - Returns: string
+    public func getUserDefaultBoolValue (key : String ) -> Bool
+    {
+        //Here first Fetch the String value
+        let strValue = self.getUserDefault(key: key)
+        
+        //Then convert value to Bool
+        if let bool = Bool(strValue)
+        {
+            return bool
+        }
+        else
+        {
+            return false
+        }
+    }
+    
+    /// Function to get the user default values
+    ///
+    /// - Parameter key: key
+    /// - Returns: string
+    public func getUserDefaultIntValue (key : String ) -> Int
+    {
+        //Here first Fetch the String value
+        let strValue = self.getUserDefault(key: key)
+        
+        //Then convert value to int
+        if let intVal = Int(strValue)
+        {
+            return intVal
+        }
+        else
+        {
+            return -1
+        }
     }
 }
 

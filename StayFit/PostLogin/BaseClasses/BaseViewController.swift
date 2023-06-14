@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 //enum to place the
 public enum placeAt {
     case Right
@@ -28,6 +29,7 @@ public enum BackButtonType {
 ///this is a base class
 class BaseViewController: UIViewController {
 
+    public var MBLoader : CustomLoader?
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -230,16 +232,32 @@ class BaseViewController: UIViewController {
         }
     }
     
+    // Function to show the loader
+    public func displayLoader() {
+        MBLoader = CustomLoader(frame: view.bounds)
+        view.addSubview(MBLoader!)
+    }
+    
+    // Function to hide the loader
+    public func dismissLoader() {
+        MBLoader?.removeFromSuperview()
+        MBLoader = nil
+    }
+    
+    //MARK: - Navigationbar button action
+    /// backbutton action
     @objc func backButtonTapped()
     {
         self.navigationController?.popViewController(animated: true)
     }
     
+    /// Share button action
     @objc func shareButtonTapped()
     {
         print("Share button Tapped")
     }
     
+    /// More button action
     @objc func moreButtonTapped()
     {
         print("More button Tapped")

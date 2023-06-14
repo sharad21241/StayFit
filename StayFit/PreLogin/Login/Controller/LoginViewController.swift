@@ -24,9 +24,10 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var lblor: UILabel!
     
     //MARK: - Variable Declaration
-    
+    fileprivate var presenter = LoginPresenter()
     //MARK: - View Lifecycle
     override func viewDidLoad() {
+        presenter.attachView(self)
         super.viewDidLoad()
         self.setupUI()
     }
@@ -72,6 +73,39 @@ class LoginViewController: BaseViewController {
         btnEye.tintColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
         btnEye.setTitleColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray), for: .normal)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(clickForgotPassword))
+        lblForgot.isUserInteractionEnabled = true
+        lblForgot.addGestureRecognizer(tap)
+        
+    }
+    
+    func showAlert(title: String = "", message: String, showButton: ButtonToShow = .Center) {
+        let storyboard = UIStoryboard(name: Storyboard.shared.MBAlert, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.MBAlertVC) as! MBAlertVC
+        vc.delegate = self
+        vc.whichButtonToShow = showButton
+        vc.titleString = title
+        vc.message = message
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    /// forgot password clicked
+    /// - Parameter sender: UITapGestureRecognizer
+    @objc func clickForgotPassword(sender: UITapGestureRecognizer)
+    {
+        presenter.forgotPassword(email: tfuserName.text ?? "")
+    }
+    
+    func validateDetails() -> Bool {
+        if tfuserName.text == "" {
+            return false
+        }
+        if tfPassword.text == "" {
+            return false
+        }
+        return true
     }
     
     //MARK: -IBAction methods
@@ -91,9 +125,50 @@ class LoginViewController: BaseViewController {
     /// function call for button tap action
     /// - Parameter sender: UIButton
     @IBAction func btnLoginTapped(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.WelcomeUserVC) as! WelcomeUserVC
-        //self.navigationController?.pushViewController(vc, animated: true)
-        Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
+        if !validateDetails() {
+            //Show alert here
+            return
+        }
+        let userData = User(email: tfuserName.text ?? "", password: tfPassword.text ?? "")
+        presenter.login(userData: userData)
+    }
+}
+
+extension LoginViewController: LoginView {
+    func loginSuccess() {
+        if AuthManager.shared.isNewUser {
+            let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.WelcomeUserVC) as! WelcomeUserVC
+            //self.navigationController?.pushViewController(vc, animated: true)
+            Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: Storyboard.shared.Dashboard, bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.DashboardViewController) as! DashboardViewController
+            //self.navigationController?.pushViewController(vc, animated: true)
+            Constants.shared.appDel.rootNavigation.setViewControllers([vc], animated: true)
+            Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
+        }
+    }
+    
+    func showError(errorMessage: String) {
+        showAlert(message: errorMessage)
+    }
+    
+    func showLoader() {
+        self.displayLoader()
+    }
+    
+    func hideLoader() {
+        self.dismissLoader()
+    }
+}
+
+extension LoginViewController: buttonDelegate {
+    func okButtonTapped() {
+        print("\n\nOk Button tapped")
+    }
+    
+    func btnYesTapped() {
+        //Do Nothing
     }
 }

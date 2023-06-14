@@ -13,5 +13,7 @@
 	<string>Register</string>
 	<key>UILaunchStoryboardName</key>
 	<string>SplashScreen</string>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
 </dict>
 </plist>

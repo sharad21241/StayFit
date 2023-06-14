@@ -40,7 +40,17 @@
 		D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D038A8A8297A97DE00EDAED3 /* CarouselView.swift */; };
 		D04E39822977E80C00528B7F /* CommonTextfieldEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */; };
 		D04E398929781EC200528B7F /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E398829781EC200528B7F /* CardsViewController.swift */; };
+		D05CC42C2A38733300963865 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05CC42B2A38733300963865 /* LoginPresenter.swift */; };
+		D05CC4312A3875C300963865 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05CC4302A3875C300963865 /* AuthManager.swift */; };
+		D05CC4332A38763C00963865 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05CC4322A38763C00963865 /* BaseView.swift */; };
+		D05CC4362A38869E00963865 /* CustomLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05CC4352A38869E00963865 /* CustomLoader.swift */; };
+		D0A2442D29AB75A60034F025 /* MBAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A2442C29AB75A60034F025 /* MBAlert.storyboard */; };
+		D0A2442F29AB75C70034F025 /* MBAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2442E29AB75C70034F025 /* MBAlertVC.swift */; };
 		D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */; };
+		D0B3795D2A1E0B6900EA89CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0B3795C2A1E0B6900EA89CA /* GoogleService-Info.plist */; };
+		D0B379602A1E0EEC00EA89CA /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3795F2A1E0EEC00EA89CA /* RegistrationPresenter.swift */; };
+		D0B379622A1E10C100EA89CA /* RegistrationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B379612A1E10C100EA89CA /* RegistrationDetails.swift */; };
+		D0B379642A1E13B400EA89CA /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B379632A1E13B400EA89CA /* RegistrationView.swift */; };
 		D0BB2B9329976FF100AC59F7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B9229976FF100AC59F7 /* ProfileViewController.swift */; };
 		D0C2E9F7299254C300FEAB92 /* TextFieldRightViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C2E9F5299254C300FEAB92 /* TextFieldRightViewCell.swift */; };
 		D0C2E9F8299254C300FEAB92 /* TextFieldRightViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0C2E9F6299254C300FEAB92 /* TextFieldRightViewCell.xib */; };
@@ -100,7 +110,17 @@
 		D038A8A8297A97DE00EDAED3 /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
 		D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTextfieldEntity.swift; sourceTree = "<group>"; };
 		D04E398829781EC200528B7F /* CardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
+		D05CC42B2A38733300963865 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		D05CC4302A3875C300963865 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		D05CC4322A38763C00963865 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D05CC4352A38869E00963865 /* CustomLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoader.swift; sourceTree = "<group>"; };
+		D0A2442C29AB75A60034F025 /* MBAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MBAlert.storyboard; sourceTree = "<group>"; };
+		D0A2442E29AB75C70034F025 /* MBAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAlertVC.swift; sourceTree = "<group>"; };
 		D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		D0B3795C2A1E0B6900EA89CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D0B3795F2A1E0EEC00EA89CA /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		D0B379612A1E10C100EA89CA /* RegistrationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDetails.swift; sourceTree = "<group>"; };
+		D0B379632A1E13B400EA89CA /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		D0BB2B9229976FF100AC59F7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D0C2E9F5299254C300FEAB92 /* TextFieldRightViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldRightViewCell.swift; sourceTree = "<group>"; };
 		D0C2E9F6299254C300FEAB92 /* TextFieldRightViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextFieldRightViewCell.xib; sourceTree = "<group>"; };
@@ -177,6 +197,7 @@
 				D0049D96296C1919009FFDD9 /* Assets.xcassets */,
 				D0049D98296C191A009FFDD9 /* LaunchScreen.storyboard */,
 				D0049D9B296C191A009FFDD9 /* Info.plist */,
+				D0B3795C2A1E0B6900EA89CA /* GoogleService-Info.plist */,
 			);
 			path = StayFit;
 			sourceTree = "<group>";
@@ -237,6 +258,8 @@
 		D0049DAB296C1C5E009FFDD9 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D05CC4342A38869000963865 /* MBLoader */,
+				D0A2442B29AB75900034F025 /* AlertView */,
 				D038A897297A6EEE00EDAED3 /* PageControl */,
 				D04E398329781DBA00528B7F /* CarouselView */,
 				D00B95E22977D05500244DC0 /* TableViewCell */,
@@ -264,6 +287,8 @@
 		D0049DAF296C1CC6009FFDD9 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				D05CC42A2A3840F400963865 /* View */,
+				D0B3795E2A1E0EBF00EA89CA /* Presenter */,
 				D00B95E92977E77600244DC0 /* Model */,
 				D0049DB2296C1CD9009FFDD9 /* Controller */,
 				D0049DB1296C1CD3009FFDD9 /* Storyboard */,
@@ -274,6 +299,9 @@
 		D0049DB0296C1CCE009FFDD9 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D05CC42F2A38734300963865 /* View */,
+				D05CC42E2A38733F00963865 /* Model */,
+				D05CC42D2A38733800963865 /* Presenter */,
 				D0DDF31E29717BAF003D3E30 /* Storyboard */,
 				D0DDF31D29717BA8003D3E30 /* Controller */,
 			);
@@ -388,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				D04E39812977E80C00528B7F /* CommonTextfieldEntity.swift */,
+				D0B379612A1E10C100EA89CA /* RegistrationDetails.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -410,12 +439,69 @@
 			path = CarouselView;
 			sourceTree = "<group>";
 		};
+		D05CC42A2A3840F400963865 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0B379632A1E13B400EA89CA /* RegistrationView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D05CC42D2A38733800963865 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D05CC42B2A38733300963865 /* LoginPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D05CC42E2A38733F00963865 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D05CC4302A3875C300963865 /* AuthManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D05CC42F2A38734300963865 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D05CC4322A38763C00963865 /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D05CC4342A38869000963865 /* MBLoader */ = {
+			isa = PBXGroup;
+			children = (
+				D05CC4352A38869E00963865 /* CustomLoader.swift */,
+			);
+			path = MBLoader;
+			sourceTree = "<group>";
+		};
+		D0A2442B29AB75900034F025 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				D0A2442C29AB75A60034F025 /* MBAlert.storyboard */,
+				D0A2442E29AB75C70034F025 /* MBAlertVC.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
 		D0A8938F296EEA7F00B09DD4 /* NavigationController */ = {
 			isa = PBXGroup;
 			children = (
 				D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */,
 			);
 			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		D0B3795E2A1E0EBF00EA89CA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D0B3795F2A1E0EEC00EA89CA /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		D0C2E9FB29926E9400FEAB92 /* Dashboard */ = {
@@ -556,6 +642,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A2442D29AB75A60034F025 /* MBAlert.storyboard in Resources */,
 				D0049DC0296C22C1009FFDD9 /* iPhone6.plist in Resources */,
 				D0C2E9F8299254C300FEAB92 /* TextFieldRightViewCell.xib in Resources */,
 				D0049DC1296C22C1009FFDD9 /* iPhone.plist in Resources */,
@@ -575,6 +662,7 @@
 				D0049D95296C1918009FFDD9 /* Main.storyboard in Resources */,
 				D0049DB4296C1CE5009FFDD9 /* Register.storyboard in Resources */,
 				D038A8A6297A97B400EDAED3 /* CarouselView.xib in Resources */,
+				D0B3795D2A1E0B6900EA89CA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,8 +719,10 @@
 				D0F32FF6296FD93D00D9390B /* FourthTourViewController.swift in Sources */,
 				D0049D92296C1918009FFDD9 /* ViewController.swift in Sources */,
 				D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */,
+				D05CC42C2A38733300963865 /* LoginPresenter.swift in Sources */,
 				D0049DC9296C24A1009FFDD9 /* Utils.swift in Sources */,
 				D04E39822977E80C00528B7F /* CommonTextfieldEntity.swift in Sources */,
+				D05CC4332A38763C00963865 /* BaseView.swift in Sources */,
 				D0BB2B9329976FF100AC59F7 /* ProfileViewController.swift in Sources */,
 				D0049DB6296C1CFE009FFDD9 /* RegisterBaseViewController.swift in Sources */,
 				D038A89C297A702600EDAED3 /* MBIndicatorView.m in Sources */,
@@ -641,12 +731,14 @@
 				D04E398929781EC200528B7F /* CardsViewController.swift in Sources */,
 				D0049DD3296C2656009FFDD9 /* Enum.swift in Sources */,
 				D038A89E297A707600EDAED3 /* MBLCAnimatedPageControl.m in Sources */,
+				D05CC4312A3875C300963865 /* AuthManager.swift in Sources */,
 				D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */,
 				D00B95E72977D1DE00244DC0 /* TextFieldCell.swift in Sources */,
 				D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */,
 				D0C2E9F7299254C300FEAB92 /* TextFieldRightViewCell.swift in Sources */,
 				D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */,
 				D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */,
+				D0B379602A1E0EEC00EA89CA /* RegistrationPresenter.swift in Sources */,
 				D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */,
 				D00B95E12977CD4000244DC0 /* PersonalDetailsVC.swift in Sources */,
 				D0049DB8296C1E44009FFDD9 /* OnboardingViewController.swift in Sources */,
@@ -654,11 +746,15 @@
 				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
 				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
 				D0C2E9FD29926EA900FEAB92 /* DashboardViewController.swift in Sources */,
+				D05CC4362A38869E00963865 /* CustomLoader.swift in Sources */,
+				D0B379622A1E10C100EA89CA /* RegistrationDetails.swift in Sources */,
 				D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */,
 				D0C2E9FA299267C900FEAB92 /* WelcomeUserVC.swift in Sources */,
+				D0A2442F29AB75C70034F025 /* MBAlertVC.swift in Sources */,
 				D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */,
 				D0F32FF2296FD91E00D9390B /* SecondTourViewController.swift in Sources */,
 				D0FB8466296ED9920079482A /* FirstTourViewController.swift in Sources */,
+				D0B379642A1E13B400EA89CA /* RegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,4 +8,9 @@ target 'StayFit' do
   # Pods for StayFit
 	pod 'Alamofire'
   pod 'iCarousel'
+  pod 'Firebase'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
 end

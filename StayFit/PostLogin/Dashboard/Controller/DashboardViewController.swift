@@ -22,7 +22,6 @@ class DashboardViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        self.setupNavigationBar(title: "Dashboard", backButtonType: .crossButton, rightButtonType: .noRightButton)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

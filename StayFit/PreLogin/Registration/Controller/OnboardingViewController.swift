@@ -24,6 +24,18 @@ class OnboardingViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
+        //If already registered
+        let isRegistered = Utils.shared.getUserDefaultBoolValue(key: "isRegistered")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            if isRegistered {
+                self.btnGetStarted.isHidden = true
+                let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+                //Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
+                Constants.shared.appDel.rootNavigation.setViewControllers([vc], animated: true)
+                Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
+            }
+        })
     }
     
     //MARK: - User Defined Methods

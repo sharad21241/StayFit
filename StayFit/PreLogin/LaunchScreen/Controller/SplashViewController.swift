@@ -20,15 +20,5 @@ class SplashViewController: UIViewController {
     {
         lblCaption.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXS)
         lblCaption.text = "Everybody Can Train"
-//        let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
-//        let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.OnboardingViewController) as! OnboardingViewController
-//        Constants.shared.rootNavigation.pushViewController(vc, animated: true)
-//        Constants.shared.appDel?.window??.rootViewController =  Constants.shared.rootNavigation
-        
-//        let sbRegister = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
-//        let vcRegister = sbRegister.instantiateViewController(withIdentifier: VCIdentifier.shared.OnboardingViewController) as! OnboardingViewController
-//        //Constants.shared.rootNavigation.setViewControllers([vcRegister], animated: true)
-////        window?.rootViewController = UIStoryboard(name: "Register", bundle: nil).instantiateInitialViewController()!
-//        Constants.shared.appDel.window?.rootViewController =  vcRegister
     }
 }

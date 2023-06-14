@@ -12,8 +12,6 @@ class RegisterBaseViewController: BaseViewController {
     //MARK: - IBOutles Declaration
     @IBOutlet weak var lblHeyThere: UILabel!
     @IBOutlet weak var lblCreateAccount: UILabel!
-    @IBOutlet weak var tflFirst: CustomTextField!
-    @IBOutlet weak var tflSecond: CustomTextField!
     @IBOutlet weak var tflThird: CustomTextField!
     @IBOutlet weak var tflFourth: CustomTextField!
     @IBOutlet weak var lblor: UILabel!
@@ -29,19 +27,25 @@ class RegisterBaseViewController: BaseViewController {
     let MBIcon = MBFontello.shared
     var strTermsUncheck: NSMutableAttributedString!
     var strTermsCheck: NSMutableAttributedString!
+    var objPresenter = RegistrationPresenter()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        objPresenter.attachView(self)
     }
     
     /// function call to setup UI
     func setupUI()
     {
         //Setup Textfield
-        setupTextField(textField: tflFirst, placeholder: "First Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
-        setupTextField(textField: tflSecond, placeholder: "Last Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
+//        setupTextField(textField: tflFirst, placeholder: "First Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
+//        setupTextField(textField: tflSecond, placeholder: "Last Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
         setupTextField(textField: tflThird, placeholder: "Email", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_mail)
         setupTextField(textField: tflFourth, placeholder: "Password", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.Ic_Lock)
+        //Tags
+       
+        tflThird.tag = 0
+        tflFourth.tag = 1
         
         //Setup UILabel
         setupUILabel(label: lblLogin, lblText: "Already have an Account? Login", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
@@ -87,6 +91,37 @@ class RegisterBaseViewController: BaseViewController {
         lblTerms.addGestureRecognizer(tapGesture)
         lblTerms.isUserInteractionEnabled = true
     }
+    //Function call to validation
+    func validateData() -> Bool
+    {
+        if tflThird.text == "" {
+            return false
+        }
+        if tflFourth.text == "" {
+            return false
+        }
+        return true
+    }
+    
+    /// function call to save registration details in coreData
+    func setRegistrationData(with closure: @escaping () -> Void)
+    {
+        let data = User(email: self.tflThird.text ?? "", password: self.tflThird.text ?? "")
+        self.objPresenter.setUserData(userData: data)
+        
+    }
+    
+    func showAlert(title: String = "", message: String, showButton: ButtonToShow = .Center) {
+        let storyboard = UIStoryboard(name: Storyboard.shared.MBAlert, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.MBAlertVC) as! MBAlertVC
+        vc.delegate = self
+        vc.whichButtonToShow = showButton
+        vc.titleString = title
+        vc.message = message
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .custom
+        self.present(vc, animated: true, completion: nil)
+    }
     
     @IBAction func btnCheckboxTapped(_ sender: UIButton) {
         //Perform action without animation
@@ -105,9 +140,48 @@ class RegisterBaseViewController: BaseViewController {
     
     @objc func onTapRegister()
     {
+        if validateData() {
+            setRegistrationData(with: {
+                self.showAlert(title: "Yay!!", message: "Registration Successful!")
+            })
+        } else {
+            showAlert(title: "", message: "Please fill all the details")
+        }
+    }
+}
+
+extension RegisterBaseViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        //if textF
+    }
+}
+
+extension RegisterBaseViewController: buttonDelegate {
+    func okButtonTapped() {
+        print("\n\nOk Button tapped")
+    }
+    
+    func btnYesTapped() {
+        //Do Nothing
+    }
+}
+
+extension RegisterBaseViewController: RegistrationView{
+    func showUserData(_ user: User) {
+        let user = user
+    }
+    
+    func showNoDataAvailable() {
+        //
+    }
+    
+    func showError(errorMessage: String) {
+        self.showAlert(message: errorMessage)
+    }
+    
+    func successRegister() {
         let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.PersonalDetailsVC) as! PersonalDetailsVC
-        //self.navigationController?.pushViewController(vc, animated: true)
         Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
     }
 }
