@@ -15,6 +15,9 @@ class OnboardingViewController: BaseViewController {
     @IBOutlet weak var lblFitNest: UILabel!
     @IBOutlet weak var lblX: UILabel!
     
+    //MARK: - Variable Declaration
+    var isRegistered = false
+    
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,12 +28,12 @@ class OnboardingViewController: BaseViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
         //If already registered
-        let isRegistered = Utils.shared.getUserDefaultBoolValue(key: "isRegistered")
+        isRegistered = false//Utils.shared.getUserDefaultBoolValue(key: "isRegistered")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-            if isRegistered {
+            if self.isRegistered {
                 self.btnGetStarted.isHidden = true
                 let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+                let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.RegistrationViewController) as! RegistrationViewController
                 //Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
                 Constants.shared.appDel.rootNavigation.setViewControllers([vc], animated: true)
                 Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
@@ -52,8 +55,8 @@ class OnboardingViewController: BaseViewController {
         //Setup button
         let firstColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond)
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
-
-        setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnGetStarted, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Get Started!", borderWidth: 1)
+        print("\n\n Screen Size is \(UIScreen.main.nativeBounds.height)")
+        setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnGetStarted, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXS, title: "Get Started!", borderWidth: 1)
         btnGetStarted.addTarget(self, action: #selector(getStartedTapped), for: .touchUpInside)
     }
     
@@ -61,7 +64,7 @@ class OnboardingViewController: BaseViewController {
     /// Function call for getStarted button action
     @objc func getStartedTapped() {
         let sbRegister = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
-        let vcRegister = sbRegister.instantiateViewController(withIdentifier: VCIdentifier.shared.FirstTourViewController) as! FirstTourViewController
+        let vcRegister = sbRegister.instantiateViewController(withIdentifier: VCIdentifier.shared.RegistrationViewController) as! RegistrationViewController
         Constants.shared.appDel.rootNavigation.setViewControllers([vcRegister], animated: true)
         Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
     }

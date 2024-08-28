@@ -94,8 +94,13 @@ class CardsViewController: BaseViewController {
     @objc func btnNextTapped()
     {
         if isFormPrelogin {
+//            let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
+//            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+//            Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
+            
             let storyboard = UIStoryboard(name: Storyboard.shared.Login, bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.LoginViewController) as! LoginViewController
+            let vc = storyboard.instantiateViewController(withIdentifier: VCIdentifier.shared.WelcomeUserVC) as! WelcomeUserVC
+            //self.navigationController?.pushViewController(vc, animated: true)
             Constants.shared.appDel.rootNavigation.pushViewController(vc, animated: true)
         }
         else {

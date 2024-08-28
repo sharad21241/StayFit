@@ -7,33 +7,176 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B06B0A17-2242-4AC5-BA2F-2B7133FB62CC"
+            uuid = "638657B7-97CE-4C73-8824-ACC5BBFAB143"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StayFit/PreLogin/Registration/Presenter/RegistrationPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "registerUser(userData:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "638657B7-97CE-4C73-8824-ACC5BBFAB143 - e4a792c3fb546528"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayFit.RegistrationPresenter.registerUser(userData: StayFit.User) -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Presenter/RegistrationPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "638657B7-97CE-4C73-8824-ACC5BBFAB143 - 3955f94235d476a2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in StayFit.RegistrationPresenter.registerUser(userData: StayFit.User) -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Presenter/RegistrationPresenter.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A0EB03A5-262C-42D0-A630-E546A9D643EC"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "StayFit/PreLogin/Registration/Controller/RegisterBaseViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "onTapRegister()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "setRegistrationData(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "73368998-863D-4659-BE9C-024B18314C59"
+            uuid = "27561C50-35B9-47FB-BAAA-59BF23E2A936"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StayFit/PreLogin/LaunchScreen/Controller/SplashViewController.swift"
+            filePath = "StayFit/PreLogin/Registration/Controller/RegistrationViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "updateUI()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "prepareTabBar()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "27561C50-35B9-47FB-BAAA-59BF23E2A936 - 582f562fe0fba8f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayFit.RegistrationViewController.prepareTabBar() -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Controller/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "840">
+               </Location>
+               <Location
+                  uuid = "27561C50-35B9-47FB-BAAA-59BF23E2A936 - 582f562fe0fba8f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayFit.RegistrationViewController.prepareTabBar() -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Controller/RegistrationViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "256">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94DD240B-89A1-4C88-989D-31300A5A96BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StayFit/PreLogin/Registration/Controller/SignUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "btnCheckBoxTapped(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "94DD240B-89A1-4C88-989D-31300A5A96BA - ac4bc4be9bf5a8ee"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in StayFit.SignUpViewController.btnCheckBoxTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Controller/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "94DD240B-89A1-4C88-989D-31300A5A96BA - 57f4fe60b4cdc483"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "StayFit.SignUpViewController.btnCheckBoxTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Controller/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "94DD240B-89A1-4C88-989D-31300A5A96BA - ac4bc4be9bf5a801"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in StayFit.SignUpViewController.btnCheckBoxTapped(__C.UIButton) -&gt; ()"
+                  moduleName = "StayFit"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sharadgangurde/Documents/DEMO/StayFit/StayFit/PreLogin/Registration/Controller/SignUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

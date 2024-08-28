@@ -38,7 +38,9 @@ class MBAlertVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.updateUI()
+        DispatchQueue.main.async {
+            self.updateUI()
+        }
     }
     
     func updateUI()
@@ -59,7 +61,7 @@ class MBAlertVC: BaseViewController {
             self.btnLeft.isHidden = false
             self.btnRight.isHidden = false
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now(), execute: {
             self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: self.btnLeft, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeS, title: "No", radius: Float(self.btnLeft.frame.height)/2)
             self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: self.btnCenter, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeS, title: "Ok", radius: Float(self.btnCenter.frame.height)/2)
             self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: self.btnRight, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeS, title: "Yes", radius: Float(self.btnRight.frame.height)/2)

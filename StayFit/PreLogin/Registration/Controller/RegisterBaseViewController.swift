@@ -37,11 +37,9 @@ class RegisterBaseViewController: BaseViewController {
     /// function call to setup UI
     func setupUI()
     {
-        //Setup Textfield
-//        setupTextField(textField: tflFirst, placeholder: "First Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
-//        setupTextField(textField: tflSecond, placeholder: "Last Name", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_user)
-        setupTextField(textField: tflThird, placeholder: "Email", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_mail)
-        setupTextField(textField: tflFourth, placeholder: "Password", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.Ic_Lock)
+        self.navigationController?.navigationBar.isHidden = true
+        setupTextField(textField: tflThird, placeholder: "Email", fontSize: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.icon_mail)
+        setupTextField(textField: tflFourth, placeholder: "Password", fontSize: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.Poppins, icon: MBIcon.Ic_Lock)
         //Tags
        
         tflThird.tag = 0
@@ -73,7 +71,7 @@ class RegisterBaseViewController: BaseViewController {
         btnGoogle.sizeToFit()
         btnGoogle.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorLightGray).cgColor
         
-        let fontelloFont = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXL, fontName: ThemeConstants.shared.FontFontello)
+        let fontelloFont = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXS, fontName: ThemeConstants.shared.FontFontello)
         let font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins)
         let colorBlack = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack)
         
@@ -103,11 +101,11 @@ class RegisterBaseViewController: BaseViewController {
         return true
     }
     
-    /// function call to save registration details in coreData
+    /// function call to save registration details in db
     func setRegistrationData(with closure: @escaping () -> Void)
     {
-        let data = User(email: self.tflThird.text ?? "", password: self.tflThird.text ?? "")
-        self.objPresenter.setUserData(userData: data)
+        let data = User(email: self.tflThird.text ?? "", password: self.tflFourth.text ?? "")
+        self.objPresenter.registerUser(userData: data)
         
     }
     
@@ -167,16 +165,16 @@ extension RegisterBaseViewController: buttonDelegate {
 }
 
 extension RegisterBaseViewController: RegistrationView{
-    func showUserData(_ user: User) {
-        let user = user
-    }
-    
-    func showNoDataAvailable() {
-        //
-    }
-    
     func showError(errorMessage: String) {
         self.showAlert(message: errorMessage)
+    }
+    
+    func showLoader() {
+        self.displayLoader()
+    }
+    
+    func hideLoader() {
+        self.dismissLoader()
     }
     
     func successRegister() {

@@ -32,50 +32,29 @@ class RegistrationPresenter: NSObject {
         objView = nil
     }
     
-    func fetchUserData() {
-        model?.fetchUserData { [weak self] (user) in
-            if let user = user {
-                self?.objView?.showUserData(user)
-            } else {
-                self?.objView?.showNoDataAvailable()
-            }
-        }
-    }
-    
     /// function call to save user details
     /// - Parameter userData: User
-    func setUserData(userData: User) {
-        
-        // JSON object data
-//        let jsonObject: [String: Any] = [
-//            "email": userData.email,
-//            "password": userData.password,
-//        ]
-        
-        //Firestore DB
-        // Write the JSON object to Firestore
-//        db.collection("UserDetails").document("User").setData(jsonObject) { error in
-//            if let error = error {
-//                //print("Error writing document: \(error)")
-//                self.objView?.showError(errorMessage: "Unable to register, Try again!")
-//            } else {
-//                //print("Document successfully written!")
-//                self.objView?.successRegister()
-//            }
-//        }
-        
+    func registerUser(userData: User) {
+        self.objView?.showLoader()
         Auth.auth().createUser(withEmail: userData.email, password: userData.password) { authResult, error in
             if let error = error {
-                // Handle registration error
+                // Handle error
                 print("Registration error: \(error.localizedDescription)")
                 self.objView?.showError(errorMessage: error.localizedDescription)
             } else {
                 // Registration successful
-                // Proceed with necessary actions for a successful registration
+                AuthManager.shared.email = authResult?.user.email
+                AuthManager.shared.uid = authResult?.user.uid
+                AuthManager.shared.displayName = authResult?.user.displayName
+                AuthManager.shared.isNewUser = authResult?.additionalUserInfo?.isNewUser ?? false
+                
+                print(authResult as Any)
+                Utils.shared.setUserDefault(key: "userId", value: AuthManager.shared.uid ?? "")
                 print("Registration successful!")
                 Utils.shared.setUserDefaultBoolValue(key: "isRegistered", value: true)
                 self.objView?.successRegister()
             }
         }
+        self.objView?.hideLoader()
     }
 }

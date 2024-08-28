@@ -30,6 +30,27 @@ class PersonalDetailsVC: BaseViewController {
         self.updateUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        tblViw.addObserver(self, forKeyPath: "contentSize", options: [], context: nil)
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        tblViw.removeObserver(self, forKeyPath: "contentSize", context: nil)
+    }
+    
+    /// Function to set the observer
+    ///
+    /// - Parameters:
+    ///   - keyPath: keypath
+    ///   - object: object
+    ///   - change: change
+    ///   - context: context
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?){
+        tblHeightConstraint.constant = tblViw.contentSize.height
+    }
+    
     //MARK: - User Defined methods
     /// function call to update UI
     func updateUI()

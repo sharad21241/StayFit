@@ -21,7 +21,7 @@ class WelcomeUserVC: BaseViewController {
     {
         let fontRegular = ThemeConstants.shared.Poppins
         let fontBold = ThemeConstants.shared.PoppinsSemiBold
-        let fontSizeM = ThemeConstants.shared.FontSizeM
+        let fontSizeXS = ThemeConstants.shared.FontSizeXS
         let fontSizeXL = ThemeConstants.shared.FontSizeXL
         
         let colorBlack = ThemeConstants.shared.FontColorBlack
@@ -31,7 +31,7 @@ class WelcomeUserVC: BaseViewController {
         //1 - Title Label
         setupUILabel(label: lblTitle, lblText: "Welcome, Stefani", size: fontSizeXL, name: fontBold, color: colorBlack)
         //2 - Subtitle Label
-        setupUILabel(label: lblSubTitle, lblText: "You are all set now, let’s reach your goals together with us", size: fontSizeM, name: fontRegular, color: colorGray)
+        setupUILabel(label: lblSubTitle, lblText: "You are all set now, let’s reach your goals together with us", size: fontSizeXS, name: fontRegular, color: colorGray)
         
         //Setup Button
         let firstColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinearSecond)

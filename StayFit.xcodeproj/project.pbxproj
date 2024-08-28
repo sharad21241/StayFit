@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7848B8A91BE5223FD5AE8987 /* Pods_StayFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */; };
 		D0049D8E296C1918009FFDD9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D8D296C1918009FFDD9 /* AppDelegate.swift */; };
 		D0049D90296C1918009FFDD9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D8F296C1918009FFDD9 /* SceneDelegate.swift */; };
 		D0049D92296C1918009FFDD9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0049D91296C1918009FFDD9 /* ViewController.swift */; };
@@ -34,6 +33,8 @@
 		D00B95E12977CD4000244DC0 /* PersonalDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B95E02977CD4000244DC0 /* PersonalDetailsVC.swift */; };
 		D00B95E72977D1DE00244DC0 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B95E52977D1DE00244DC0 /* TextFieldCell.swift */; };
 		D00B95E82977D1DE00244DC0 /* TextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D00B95E62977D1DE00244DC0 /* TextFieldCell.xib */; };
+		D00CB7382A399316009EEFDF /* Pods_StayFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */; };
+		D00CB7392A399316009EEFDF /* Pods_StayFit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D038A89C297A702600EDAED3 /* MBIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = D038A89B297A702600EDAED3 /* MBIndicatorView.m */; };
 		D038A89E297A707600EDAED3 /* MBLCAnimatedPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D038A89D297A707600EDAED3 /* MBLCAnimatedPageControl.m */; };
 		D038A8A6297A97B400EDAED3 /* CarouselView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D038A8A5297A97B400EDAED3 /* CarouselView.xib */; };
@@ -47,6 +48,9 @@
 		D0A2442D29AB75A60034F025 /* MBAlert.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0A2442C29AB75A60034F025 /* MBAlert.storyboard */; };
 		D0A2442F29AB75C70034F025 /* MBAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2442E29AB75C70034F025 /* MBAlertVC.swift */; };
 		D0A89391296EEA9B00B09DD4 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */; };
+		D0AB51CC2A3AE9E0008057B0 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB51CB2A3AE9E0008057B0 /* RegistrationViewController.swift */; };
+		D0AB51CE2A3AF4A5008057B0 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB51CD2A3AF4A5008057B0 /* SignUpViewController.swift */; };
+		D0AB51D02A3AF4B9008057B0 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0AB51CF2A3AF4B9008057B0 /* SignInViewController.swift */; };
 		D0B3795D2A1E0B6900EA89CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0B3795C2A1E0B6900EA89CA /* GoogleService-Info.plist */; };
 		D0B379602A1E0EEC00EA89CA /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B3795F2A1E0EEC00EA89CA /* RegistrationPresenter.swift */; };
 		D0B379622A1E10C100EA89CA /* RegistrationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B379612A1E10C100EA89CA /* RegistrationDetails.swift */; };
@@ -70,6 +74,20 @@
 		D0F32FF6296FD93D00D9390B /* FourthTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F32FF5296FD93D00D9390B /* FourthTourViewController.swift */; };
 		D0FB8466296ED9920079482A /* FirstTourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FB8465296ED9920079482A /* FirstTourViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D00CB73A2A399316009EEFDF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D00CB7392A399316009EEFDF /* Pods_StayFit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3579F538D8CBF18228215CE6 /* Pods_StayFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +135,9 @@
 		D0A2442C29AB75A60034F025 /* MBAlert.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MBAlert.storyboard; sourceTree = "<group>"; };
 		D0A2442E29AB75C70034F025 /* MBAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBAlertVC.swift; sourceTree = "<group>"; };
 		D0A89390296EEA9B00B09DD4 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		D0AB51CB2A3AE9E0008057B0 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		D0AB51CD2A3AF4A5008057B0 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		D0AB51CF2A3AF4B9008057B0 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		D0B3795C2A1E0B6900EA89CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0B3795F2A1E0EEC00EA89CA /* RegistrationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		D0B379612A1E10C100EA89CA /* RegistrationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationDetails.swift; sourceTree = "<group>"; };
@@ -148,7 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7848B8A91BE5223FD5AE8987 /* Pods_StayFit.framework in Frameworks */,
+				D00CB7382A399316009EEFDF /* Pods_StayFit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +347,8 @@
 				D0F32FF1296FD91E00D9390B /* SecondTourViewController.swift */,
 				D0F32FF3296FD92E00D9390B /* ThirdTourViewController.swift */,
 				D0F32FF5296FD93D00D9390B /* FourthTourViewController.swift */,
+				D0AB51CB2A3AE9E0008057B0 /* RegistrationViewController.swift */,
+				D0AB51CD2A3AF4A5008057B0 /* SignUpViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -555,6 +578,7 @@
 			children = (
 				D0DDF32129717BCA003D3E30 /* LoginViewController.swift */,
 				D0C2E9F9299267C900FEAB92 /* WelcomeUserVC.swift */,
+				D0AB51CF2A3AF4B9008057B0 /* SignInViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -594,6 +618,7 @@
 				D0049D87296C1918009FFDD9 /* Frameworks */,
 				D0049D88296C1918009FFDD9 /* Resources */,
 				5458533AC992771C79736FC5 /* [CP] Embed Pods Frameworks */,
+				D00CB73A2A399316009EEFDF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -738,6 +763,7 @@
 				D0C2E9F7299254C300FEAB92 /* TextFieldRightViewCell.swift in Sources */,
 				D0049DCC296C25AA009FFDD9 /* Constants.swift in Sources */,
 				D0049DD5296C27AE009FFDD9 /* Extensions.swift in Sources */,
+				D0AB51D02A3AF4B9008057B0 /* SignInViewController.swift in Sources */,
 				D0B379602A1E0EEC00EA89CA /* RegistrationPresenter.swift in Sources */,
 				D038A8A9297A97DE00EDAED3 /* CarouselView.swift in Sources */,
 				D00B95E12977CD4000244DC0 /* PersonalDetailsVC.swift in Sources */,
@@ -746,10 +772,12 @@
 				D0049DAA296C19BC009FFDD9 /* SplashViewController.swift in Sources */,
 				D0049DAE296C1C76009FFDD9 /* CustomTextField.swift in Sources */,
 				D0C2E9FD29926EA900FEAB92 /* DashboardViewController.swift in Sources */,
+				D0AB51CC2A3AE9E0008057B0 /* RegistrationViewController.swift in Sources */,
 				D05CC4362A38869E00963865 /* CustomLoader.swift in Sources */,
 				D0B379622A1E10C100EA89CA /* RegistrationDetails.swift in Sources */,
 				D0049DC6296C2314009FFDD9 /* ThemeConstants.swift in Sources */,
 				D0C2E9FA299267C900FEAB92 /* WelcomeUserVC.swift in Sources */,
+				D0AB51CE2A3AF4A5008057B0 /* SignUpViewController.swift in Sources */,
 				D0A2442F29AB75C70034F025 /* MBAlertVC.swift in Sources */,
 				D0DDF30B297128A5003D3E30 /* MBFontello.swift in Sources */,
 				D0F32FF2296FD91E00D9390B /* SecondTourViewController.swift in Sources */,
@@ -902,7 +930,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y77ZUFQ965;
+				DEVELOPMENT_TEAM = X5MRCZUVQ5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -944,7 +972,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = Y77ZUFQ965;
+				DEVELOPMENT_TEAM = X5MRCZUVQ5;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

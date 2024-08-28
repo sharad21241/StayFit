@@ -28,6 +28,7 @@ class LoginViewController: BaseViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         presenter.attachView(self)
+        self.navigationController?.isNavigationBarHidden = true
         super.viewDidLoad()
         self.setupUI()
     }
@@ -39,13 +40,13 @@ class LoginViewController: BaseViewController {
         //Setup labels
         self.setupUILabel(label: lblName, lblText: "Hey there,", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
         self.setupUILabel(label: lblWlcmback, lblText: "Welcome Back", size: ThemeConstants.shared.FontSizeXXXL, name: ThemeConstants.shared.PoppinsSemiBold, color: ThemeConstants.shared.FontColorBlack)
-        self.setupUILabel(label: lblRegister, lblText: "Don’t have an account yet? Register", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
-        self.setupUILabel(label: lblForgot, lblText: "Forgot your password?", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
-        self.setupUILabel(label: lblor, lblText: "Or", size: ThemeConstants.shared.FontSizeM, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
+        self.setupUILabel(label: lblRegister, lblText: "Don’t have an account yet? Register", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorBlack)
+        self.setupUILabel(label: lblForgot, lblText: "Forgot your password?", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
+        self.setupUILabel(label: lblor, lblText: "Or", size: ThemeConstants.shared.FontSizeXS, name: ThemeConstants.shared.Poppins, color: ThemeConstants.shared.FontColorGray)
         
         //Setup Textfields
-        self.setupTextField(textField: tfuserName, placeholder: "Email", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins)
-        self.setupTextField(textField: tfPassword, placeholder: "Password", fontSize: ThemeConstants.shared.FontSizeM, fontName: ThemeConstants.shared.Poppins, icon: MBFontello.shared.Ic_Lock)
+        self.setupTextField(textField: tfuserName, placeholder: "Email", fontSize: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.Poppins)
+        self.setupTextField(textField: tfPassword, placeholder: "Password", fontSize: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.Poppins, icon: MBFontello.shared.Ic_Lock)
         
         tfPassword.isSecureTextEntry = true
         
@@ -54,7 +55,7 @@ class LoginViewController: BaseViewController {
         let lastColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear)
 
         //Setup buttons
-        self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnLogin, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXXL, title: "Login", isAttributed: true, icon: MBFontello.shared.icon_login, isIconFirst: true)
+        self.setupButtonWithGradient(firstColor: firstColor, secondColor: lastColor, btn: btnLogin, btnType: .ClearColorWhiteTextWithBorder, fontName: ThemeConstants.shared.PoppinsSemiBold, fontSize: ThemeConstants.shared.FontSizeXXL, title: "Login", isAttributed: true, icon: MBFontello.shared.icon_login, isIconFirst: true)
         
         //Social Icons
         btnFB.setImage(UIImage(named: "facebook"), for: .normal)
@@ -95,7 +96,11 @@ class LoginViewController: BaseViewController {
     /// - Parameter sender: UITapGestureRecognizer
     @objc func clickForgotPassword(sender: UITapGestureRecognizer)
     {
-        presenter.forgotPassword(email: tfuserName.text ?? "")
+        if tfuserName.text?.count ?? 0 > 0 {
+            presenter.forgotPassword(email: tfuserName.text ?? "")
+        } else {
+            showAlert(message: "Please enter email")
+        }
     }
     
     func validateDetails() -> Bool {

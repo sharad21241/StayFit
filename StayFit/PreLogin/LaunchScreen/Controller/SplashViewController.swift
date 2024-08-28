@@ -20,5 +20,7 @@ class SplashViewController: UIViewController {
     {
         lblCaption.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXS)
         lblCaption.text = "Everybody Can Train"
+        
+        print("\n \(UIScreen.main.nativeBounds.height)")
     }
 }

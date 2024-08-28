@@ -36,10 +36,9 @@ class FourthTourViewController: BaseViewController {
     /// - Parameter sender: sender description
     @IBAction func btnNext(_ sender: Any) {
         let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
-        let nextVC = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.RegisterBaseViewController) as! RegisterBaseViewController
+        let nextVC = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.PersonalDetailsVC) as! PersonalDetailsVC
         //self.navigationController?.pushViewController(nextVC, animated: true)
-        Constants.shared.appDel.rootNavigation.setViewControllers([nextVC], animated: true)
-        Constants.shared.appDel.window?.rootViewController = Constants.shared.appDel.rootNavigation
+        Constants.shared.appDel.rootNavigation.pushViewController(nextVC, animated: true)
     }
     
 }

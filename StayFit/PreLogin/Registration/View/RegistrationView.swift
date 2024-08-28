@@ -6,9 +6,6 @@
 //
 
 import Foundation
-protocol RegistrationView {
-    func showUserData(_ user: User)
-    func showNoDataAvailable()
+protocol RegistrationView: BaseView {
     func successRegister()
-    func showError(errorMessage: String)
 }

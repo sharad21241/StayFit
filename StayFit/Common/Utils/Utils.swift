@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CarbonKit
 
 public class Utils: NSObject {
     public static let shared = Utils()
@@ -165,7 +166,7 @@ public class Utils: NSObject {
                 }
             }
             
-            return  UIFont(name: fontName, size: fontSize)!
+            return UIFont(name: fontName, size: fontSize)!
         }
         return UIFont()
     }
@@ -291,7 +292,7 @@ public class Utils: NSObject {
     /// - Returns: path in string format
     func getPathAccToDevice()->String
     {
-        var path = readPlist(plistName: "iPhone")
+        var path = readPlist(plistName: "iPhone6")
         
         switch Constants.shared.screenType{
         case .iPhones_5_5s_5c_SE:
@@ -334,7 +335,7 @@ public class Utils: NSObject {
     /// - Parameter key: string
     /// - Returns: string
     func getUserDefault(key: String) -> String {
-        return UserDefaults.standard.string(forKey: key)!
+        return UserDefaults.standard.string(forKey: key) ?? ""
     }
     
     
@@ -437,6 +438,64 @@ public class Utils: NSObject {
         {
             return -1
         }
+    }
+    
+    
+    /// Function to set tab bar style
+    ///
+    /// - Parameters:
+    ///   - objCarbonTab: CarbonTabSwipeNavigation
+    ///   - isEqualSize: boolean
+    public func setTabBarStyle(objCarbonTab: CarbonTabSwipeNavigation,viwController: UIViewController,isEqualSize :Bool = false) {
+        objCarbonTab.setIndicatorColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear))
+        objCarbonTab.setNormalColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear), font:Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeS))
+        objCarbonTab.setSelectedColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlueLinear), font: Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeS, fontName: ThemeConstants.shared.PoppinsSemiBold))
+        // adding space before first tab and after second tab
+        objCarbonTab.toolbar.sizeToFit()
+        
+        if isEqualSize{
+            /*// This logic is no more required, as the tabbar is working as expected
+             //If tabs are able to fit in screen width then, make them equal in size to aquire full screen size
+             if let allTabsWidth = objCarbonTab.carbonSegmentedControl?.getWidth() {
+             let screenWidth = self.view.bounds.size.width
+             if allTabsWidth < screenWidth {
+             if let allSegments = objCarbonTab.carbonSegmentedControl?.segments?.count {
+             for var index in 0..<allSegments {
+             if index == 0
+             {
+             objCarbonTab.carbonSegmentedControl!.setWidth((screenWidth + 60)/allSegments, forSegmentAt:index)
+             }
+             else
+             {
+             objCarbonTab.carbonSegmentedControl!.setWidth((screenWidth - 30)/allSegments, forSegmentAt:index)
+             }
+             
+             index+=1
+             }
+             }
+             }
+             }*/
+            
+            if let allTabsWidth = objCarbonTab.carbonSegmentedControl?.getWidth() {
+                let screenWidth = viwController.view.bounds.size.width
+                if allTabsWidth < screenWidth {
+                    if let allSegments = objCarbonTab.carbonSegmentedControl?.segments?.count {
+                        for index in 0..<allSegments {
+                            let segmentWidth = CGFloat(screenWidth) / CGFloat(allSegments)
+                            objCarbonTab.carbonSegmentedControl!.setWidth(segmentWidth, forSegmentAt: index)
+                            //index+=1
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    public func isValidEmail(_ email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailRegex)
+        return emailPredicate.evaluate(with: email)
     }
 }
 

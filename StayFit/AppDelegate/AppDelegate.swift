@@ -8,6 +8,7 @@
 import UIKit
 import CoreData
 import Firebase
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let vcSplash = sbSplash.instantiateViewController(withIdentifier: "SplashViewController") as! SplashViewController
 //        self.window?.rootViewController =  vcSplash
         FirebaseApp.configure()
+        IQKeyboardManager.shared.enable = true
         return true
     }
 
