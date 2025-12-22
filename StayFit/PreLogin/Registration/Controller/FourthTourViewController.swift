@@ -43,6 +43,9 @@ class FourthTourViewController: UIViewController {
         label.text = text
     }
     @IBAction func btnNext(_ sender: Any) {
+        let sb = UIStoryboard(name: Storyboard.shared.Register, bundle: nil)
+        let nextVC = sb.instantiateViewController(withIdentifier: VCIdentifier.shared.RegisterBaseViewController) as! RegisterBaseViewController
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
 }

@@ -13,6 +13,7 @@ public class Storyboard : NSObject {
     
     //MARK: - Storyboards
     let Register = "Register"
+    let Login = "Login"
     
     
     
@@ -22,12 +23,19 @@ public class Storyboard : NSObject {
 public class VCIdentifier: NSObject {
     public static let shared = VCIdentifier()
     
-    //MARK: - Controllers
+    //MARK: - Controllers & Xib's
     
+    let RegisterBaseViewController = "RegisterBaseViewController"
     let OnboardingViewController = "OnboardingViewController"
     let FirstTourViewController = "FirstTourViewController"
     let SecondTourViewController = "SecondTourViewController"
     let ThirdTourViewController = "ThirdTourViewController"
     let FourthTourViewController = "FourthTourViewController"
+    let LoginViewController = "LoginViewController"
+    let PersonalDetailsVC = "PersonalDetailsVC"
+    let CardsViewController = "CardsViewController"
+    
+    //MARK: -  TableView Cells
+    let textFieldCell = "TextFieldCell"
     
 }

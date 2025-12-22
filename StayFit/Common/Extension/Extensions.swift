@@ -48,6 +48,9 @@ public extension UIDevice {
         case iPhone_XR_11 = "iPhone XR or iPhone 11"
         case iPhone_XSMax_ProMax = "iPhone XS Max or iPhone Pro Max"
         case iPhone_11Pro = "iPhone 11 Pro"
+        case iPhone5 = "iPhone 5"
+        case iPhone6 = "iPhone 6"
+        case iPhone6Plus = "iPhone 6 Plus"
         case unknown
     }
     

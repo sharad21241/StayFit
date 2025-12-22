@@ -6,6 +6,14 @@
 	<string>Helvetica</string>
 	<key>FontBold</key>
 	<string>Helvetica-Bold</string>
+	<key>FontFontello</key>
+	<string>fontello</string>
+	<key>Poppins</key>
+	<string>Poppins</string>
+    <key>PoppinsSemiBold</key>
+    <string>Poppins-SemiBold</string>
+    <key>PoppinsBold</key>
+    <string>Poppins-Bold</string>
 	<key>FontSizeXXXXXXS</key>
 	<integer>4</integer>
 	<key>FontSizeXXXXXS</key>

@@ -11,6 +11,32 @@ import UIKit
 public class Utils: NSObject {
     public static let shared = Utils()
     
+    
+    /// function call to set cornerRadius to any view
+    /// - Parameters:
+    ///   - view: view description
+    ///   - radius: radius description
+    public func cornerRadiusTo(control: AnyObject, radius: Float = 10)
+    {
+        if let cntrl = control as? UIView
+        {
+            cntrl.layer.cornerRadius = CGFloat(radius)
+            cntrl.clipsToBounds = true
+            cntrl.layer.masksToBounds = true
+        }
+    }
+    
+    /// Function to create shadow to view
+    ///
+    /// - Parameter viw: view
+    public func createShadowToView(viw : UIView, height: Float = 5)
+    {
+        viw.layer.masksToBounds = false
+        viw.layer.shadowColor = UIColor.lightGray.cgColor
+        viw.layer.shadowOpacity = 0.5
+        viw.layer.shadowOffset = CGSize(width: 4, height: Int(height))
+        viw.layer.shadowRadius = 5.0
+    }
     /// function to get hex code to be replaced in svg
     ///
     /// - Parameter name: colour name (key)
@@ -27,6 +53,51 @@ public class Utils: NSObject {
             return  name
         }
         return ""
+    }
+    
+    //MARK:- Theme functions
+    /// Function to get the specific font
+    ///
+    /// - Parameters:
+    ///   - size: size
+    ///   - fontName: fontname by default it is San Francisco regular
+    /// - Returns: font to apply
+    func getSpecificFonts(size:String, fontName:String = ThemeConstants.shared.FontFontello) -> UIFont {
+        
+        let path = getPathAccToDevice()
+        
+        ////If your plist contain root as Dictionary
+        if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
+            
+            let fontName = dic[fontName]! as! String
+            
+            var fontSize =  dic[size]! as! CGFloat
+            
+            var incrementFactorForFontello:CGFloat = 0
+            if let fontello = dic[ThemeConstants.shared.FontFontello] as? String
+            {
+                if fontello == fontName
+                {
+                    switch Constants.shared.screenType{
+                    case .iPhones_5_5s_5c_SE:
+                        incrementFactorForFontello = 0
+                        
+                    case .iPhones_6_6s_7_8:
+                        incrementFactorForFontello = 2
+                        
+                    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+                        incrementFactorForFontello = 4
+                        
+                    default: break
+                    }
+                    
+                    fontSize = fontSize + incrementFactorForFontello
+                }
+            }
+            
+            return  UIFont(name: fontName, size: fontSize)!
+        }
+        return UIFont()
     }
     
 //    //MARK: - SVG Files
@@ -91,23 +162,41 @@ public class Utils: NSObject {
     ///   - size: size
     ///   - fontName: fontname by default it is San Francisco regular
     /// - Returns: font to apply
-    public func getSpecificFont(size:String, fontName:String = ThemeConstants.shared.FontRegular) -> UIFont {
+    public func getSpecificFont(size:String, fontName:String = ThemeConstants.shared.Poppins) -> UIFont {
         
         let path = getPathAccToDevice()
         
         ////If your plist contain root as Dictionary
         if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
             
-            let plistFontName = dic[fontName] as? String
+            let fontName = dic[fontName]! as! String
             
-            let fontSize =  dic[size]! as! CGFloat
+            var fontSize =  dic[size]! as! CGFloat
             
-            if let fnt = UIFont(name: plistFontName!, size: fontSize)
+            var incrementFactorForFontello:CGFloat = 0
+            if let fontello = dic[ThemeConstants.shared.FontFontello] as? String
             {
-                return fnt
+                if fontello == fontName
+                {
+                    switch Constants.shared.screenType{
+                    case .iPhones_5_5s_5c_SE:
+                        incrementFactorForFontello = 0
+                        
+                    case .iPhones_6_6s_7_8:
+                        incrementFactorForFontello = 2
+                        
+                    case .iPhones_6Plus_6sPlus_7Plus_8Plus:
+                        incrementFactorForFontello = 4
+                        
+                    default: break
+                    }
+                    
+                    fontSize = fontSize + incrementFactorForFontello
+                }
             }
+            
+            return  UIFont(name: fontName, size: fontSize)!
         }
-        
         return UIFont()
     }
     
@@ -162,6 +251,23 @@ public class Utils: NSObject {
         {
             return convertHexColor(name: ThemeConstants.shared.FontColorWhite)
         }
+    }
+    
+    /// function call to add fontello icon to textfield
+    /// - Parameters:
+    ///   - textfield: textfield description
+    ///   - icon: icon description
+    func addIconToTextField(textfield: CustomTextField, icon: String)
+    {
+        let label = UILabel();
+        label.font = getSpecificFonts(size: ThemeConstants.shared.FontSizeXS, fontName: ThemeConstants.shared.FontFontello)
+        label.textColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorGray)
+        label.text = icon
+        label.frame = CGRect(x: 10, y: 18, width: 25, height: 25)
+        textfield.addSubview(label)
+        let leftView = UIView.init(frame: CGRect(x:10, y:0, width:30, height:30))
+        textfield.leftView = leftView;
+        textfield.leftViewMode = UITextField.ViewMode.always
     }
      
     
@@ -410,12 +516,13 @@ public class MBButton: UIButton {
             self.setTitleColor(Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlue), for: .normal)
             break
         case .ClearColorWhiteTextWithBorder:
+            self.titleLabel?.font = Utils.shared.getSpecificFont(size: ThemeConstants.shared.FontSizeXXXXXL, fontName: ThemeConstants.shared.FontBold)
             self.tintColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorWhite)
             self.backgroundColor = UIColor.clear
             self.clipsToBounds = true
             self.layer.cornerRadius = 10.0
             self.layer.borderWidth = 1.0
-            self.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlue).cgColor
+            self.layer.borderColor = Utils.shared.convertHexColor(name: ThemeConstants.shared.FontColorBlack).cgColor
             break
         }
         
@@ -460,3 +567,47 @@ public class MBButton: UIButton {
     }
 }
 
+// MARK: - Gradient
+extension CAGradientLayer {
+    enum Point {
+        case topLeft
+        case centerLeft
+        case bottomLeft
+        case topCenter
+        case center
+        case bottomCenter
+        case topRight
+        case centerRight
+        case bottomRight
+        var point: CGPoint {
+            switch self {
+            case .topLeft:
+                return CGPoint(x: 0, y: 0)
+            case .centerLeft:
+                return CGPoint(x: 0, y: 0.5)
+            case .bottomLeft:
+                return CGPoint(x: 0, y: 1.0)
+            case .topCenter:
+                return CGPoint(x: 0.5, y: 0)
+            case .center:
+                return CGPoint(x: 0.5, y: 0.5)
+            case .bottomCenter:
+                return CGPoint(x: 0.5, y: 1.0)
+            case .topRight:
+                return CGPoint(x: 1.0, y: 0.0)
+            case .centerRight:
+                return CGPoint(x: 1.0, y: 0.5)
+            case .bottomRight:
+                return CGPoint(x: 1.0, y: 1.0)
+            }
+        }
+    }
+    convenience init(start: Point, end: Point, colors: [CGColor], type: CAGradientLayerType) {
+        self.init()
+        self.startPoint = start.point
+        self.endPoint = end.point
+        self.colors = colors
+        self.locations = (0..<colors.count).map(NSNumber.init)
+        self.type = type
+    }
+}
